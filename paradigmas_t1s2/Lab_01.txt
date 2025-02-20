@@ -1,0 +1,20 @@
+PARADIGMAS (LAB 1 - 20/02/2025):
+
+
+- Linguagens de Programação (LP): conjunto de regras sintáticas e semânticas usadas para comunicar instruções para um computador, definindo um programa
+
+- Evolução das LPs:
+
+    Classificação das LPs em gerações (classificação de Henri Bal e Dick Grune):
+    1 - Binário
+    2 - Assembly
+    3 - Linguagem Procedural (FORTRAN, ALGOL, COBOL)
+    4 - Linguagens Aplicativas
+    5 - IA (Lógica Funcional)
+    6 - Redes Neurais
+
+- Introdução à Linguagem C:
+
+    - Criada por Denis Ritchie, na décadade 1970;
+    - Apresenta desempenho superior (velocidade de execução) até os dias atuais;
+    - 
