@@ -30,15 +30,28 @@ public class NossoVetor {
     public NossoVetor() {
         // vetor = new int[10];
         // ocupacao = 0
-        new NossoVetor(10);
+        this(10);
     }
     public void insere (int i) {
-        vetor[ocupacao] = i;
-        ocupacao++;
+        if (!estaCheio())
+            vetor[ocupacao] = i;
+            ocupacao++;
     }
     public boolean estaCheio() {
-        if (ocupacao == vetor.length)
-            return true;
-        return false;
+        // MAIS ETAPAS
+        // if (ocupacao == vetor.length)
+        //     return true;
+        // return false;
+
+        // MENOS ETAPAS
+        return ocupacao == vetor.length;
+    }
+    @Override
+    public String toString() {
+        String s = "ocupacao = " + ocupacao + "\n";
+        for (int i = 0; i < ocupacao; i++) {
+            s += vetor[i] + " ";
+        }
+        return s + "\n";
     }
 }
