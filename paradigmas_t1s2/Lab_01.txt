@@ -17,4 +17,12 @@ PARADIGMAS (LAB 1 - 20/02/2025):
 
     - Criada por Denis Ritchie, na décadade 1970;
     - Apresenta desempenho superior (velocidade de execução) até os dias atuais;
-    - 
+
+--//--
+
+EXERCÍCIOS:
+
+PARTE 1
+
+
+PARTE 2
