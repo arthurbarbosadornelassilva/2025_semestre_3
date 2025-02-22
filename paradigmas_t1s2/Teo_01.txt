@@ -1,7 +1,7 @@
 EXERCÍCIOS:
 
-1 -
+1 - (NÃO ESTOU TENDO ACESSO AO MINHA BIBLIOTECA)
 
-2 -
+2 - Especificação de uma linguagem: são os critérios utilizados naquela linguagem, englobando o conjunto de todas as suas características (exemplo: documentação do Java);          Implementação de uma linguagem: é a aplicação desses critérios, de forma a abstrair as especificações (exemplo: criar um loop em Java).
 
-3 -
+3 - O primeiro vídeo fala mais sobre quais as vantagens de aprender a programar e o quê podemos fazer com a programação na atualidade, afirmando que os 'programadores são como os rocksstars da atualidade'. O segundo vídeo já é mais nichado, e busca informar as diferenças entre as linguagens de programação e como elas funcionam, sendo mais que uma 'propaganda audiovisual que exalta as vantagens de ser um programador'.
