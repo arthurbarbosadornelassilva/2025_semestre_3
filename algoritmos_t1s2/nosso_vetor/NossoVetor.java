@@ -30,10 +30,19 @@ public class NossoVetor {
     public NossoVetor() {
         // vetor = new int[10];
         // ocupacao = 0
-        this(10);
+        this(3);
+    }
+    private void aumentaVetor() {
+        int[] temp = new int[vetor.length * 2];
+        for (int i = 0; i < vetor.length; i++) {
+            temp[i] = vetor[i];
+        }
+        vetor = temp;
     }
     public void insere (int i) {
-        if (!estaCheio())
+        if (estaCheio()) {
+            aumentaVetor();
+        }
             vetor[ocupacao] = i;
             ocupacao++;
     }
@@ -45,6 +54,15 @@ public class NossoVetor {
 
         // MENOS ETAPAS
         return ocupacao == vetor.length;
+    }
+    public boolean estaVazio() {
+        return ocupacao == 0;
+    }
+    public int remove() {
+        // ocupacao--;
+        if (!estaVazio())
+            return vetor[ocupacao--];
+        return -1;
     }
     @Override
     public String toString() {
