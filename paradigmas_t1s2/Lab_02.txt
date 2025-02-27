@@ -1,0 +1,52 @@
+Testando a lógica de programação da linguagem C:
+
+#include <stdio.h>
+
+int valor = 10;
+char num[10] = "Macaquinho"; // vetor de caracteres com valor de string
+char nome[15]; // declaração do vetor de caracteres
+
+int main()
+{
+    printf("Você tirou nota %i, %s!!\n", valor, num);
+    printf("Digite agora o seu nome: \n");
+    fgets(nome, sizeof(nome), stdin); // função para a entrada de dados no vetor 'nome'
+    
+    printf("Olá %s \n\n", nome);
+
+    int num = 42; //declarando variável inteira
+    int *ponteiro; //declarando ponteiro
+    
+    ponteiro = &num; //atribuindo o endereço de 'num' ao ponteiro
+    
+    printf("Valor de 'numero': %d\n", num);
+    printf("Endereço de 'numero': %p\n", (void*)&num); //aponta para o endereço de memória onde a variável inteira 'num' é armazenada
+    printf("Valor apontado por 'ponteiro': %d\n", *ponteiro);
+    
+    * ponteiro = 100; // Modificando o valor diretamente através do ponteiro
+    printf("Valor de 'numero': %d\n", num);
+    printf("Valor apontado por 'ponteiro': %d\n", *ponteiro);
+    
+    int vetor_numerico[] = {10, 20, 30, 40};
+    int * ponteiro_array = vetor_numerico;
+    printf("Primeiro elemento do array: %d\n", *ponteiro_array); // o ponteiro armazenena os valores do vetor, mas printa apenas o primeiro elemento
+    printf("Segundo elemento do array: %d\n", *(ponteiro_array + 1)); //o uso do +X permite que os outros elementos sejam printados individualmente
+    
+    // criando uma função que printa todos os valores do vetor
+    
+    int i = 0;
+    for (i; i < 4; i++) {
+        printf("TODOS os elementos do array: %d\n", *(ponteiro_array + i));
+        
+    }
+    
+    char letras[5] = {'a', 'b', 'c', 'd', 'e'};
+    char *ptr = letras;
+    
+    for (i; i < 5; i++){
+    printf("\nLetras[%d] = %c ptr = %c", i, letras[i], *ptr); // o conteudo do vetor acessadopela variavel e pelo ponteiro
+    ptr++;
+}
+    
+    return 0;
+}
