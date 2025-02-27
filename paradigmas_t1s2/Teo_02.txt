@@ -1,0 +1,47 @@
+PLP - TEORIA - LISTA 2
+
+1- https://miro.com/app/board/uXjVKnC6H1M=/?share_link_id=209338409377
+
+2- No texto apresentado, foram apresentados vários jogos, e dentre os apresentados selecionei dois bem populares: Super Mario Bros & Minecraft.
+Super Mario Bros foi desenvolvido nos anos 80 na linguagem assembly 6502, linguagem de programação de baixo nível. Foi utilizada na época porque era considerada leve (já que o jogo foi feito para consoles Nintendo com processamento de 8 bits), garantindo boa velocidade de processamento de instruções e custo mais baixo, o que tornava o jogo acessível ao grande público;
+Minecraft foi desenvolvido na década de 2010 e o início de seu desenvolvimento se deu a partir do Java e, posteriormente, a partir do C#  (linguagens consideradas já de alto nível). O desenvolvimento nessas linguagens se deu inicialmente por conta da natureza multiplataforma e multi-paradigma dessas linguagens, facilitando a execução em diferentes sistemas operacionais.
+
+3- 
+Vídeo 1:
+Resposta: O paradigma imperativo foca no "como" fazer, especificando passo a passo as instruções, enquanto o declarativo enfatiza o "o que" precisa ser feito, abstraindo os detalhes da implementação. No contexto do vídeo, o método declarativo tende a resultar em um código mais conciso e fácil de manter.
+Vídeo 2:
+Resposta: O vídeo ilustra a evolução das linguagens de programação ao longo do tempo. Inicialmente, linguagens de baixo nível, como Assembly, eram amplamente utilizadas. A partir dos anos 1960, linguagens imperativas procedurais e estruturadas, como Fortran, COBOL e C, ganharam destaque e permaneceram populares até meados dos anos 1990. Com o avanço da computação, linguagens de médio nível, como C++, tornaram-se predominantes. Nos anos 2000, linguagens de alto nível, como Python, Java e JavaScript, passaram a dominar o mercado, impulsionadas pelo crescimento da programação orientada a objetos e pela demanda por maior produtividade e abstração.
+Vídeo 3:
+Resposta: Atualmente, para iniciantes, as linguagens mais recomendadas são aquelas imperativas, estruturadas e orientadas a objetos, geralmente de médio ou alto nível, como Python, C++ e Java, devido à sua sintaxe mais acessível e ampla aplicação no mercado. Em contraste, linguagens de baixo nível, como Assembly, não são sugeridas como primeira opção, pois exigem um entendimento mais profundo da arquitetura do computador. 
+
+4- Compilação Pura
+
+ Na compilação pura, o código-fonte é completamente convertido em código de máquina antes da execução. Isso significa que o código é traduzido para uma linguagem que o processador do computador entende diretamente. Após esse processo, o programa é salvo como um arquivo executável, e a execução é rápida, pois o código já está pronto para ser processado sem necessidade de interpretação posterior.
+
+ Exemplos de linguagens compiladas de forma pura incluem C e C++.
+
+
+Interpretação Pura
+
+ Em linguagens interpretadas, o código-fonte é lido e executado linha por linha por um interpretador. Isso significa que não há um processo de tradução para código de máquina prévio. O interpretador traduz e executa as instruções em tempo real, o que torna a execução mais lenta em comparação com as linguagens compiladas. Esse modelo é mais flexível e pode facilitar a depuração, mas em termos de desempenho, tende a ser menos eficiente.
+
+ Exemplos de linguagens interpretadas puras incluem JavaScript (quando executado no navegador) e Bash.
+
+
+Compilação Híbrida (Meio a Meio)
+
+ Algumas linguagens utilizam um modelo híbrido, onde o código-fonte é primeiro compilado para um código intermediário (geralmente chamado de bytecode), que não é código de máquina, mas é uma representação que pode ser facilmente interpretada e executada por uma máquina virtual (VM). Após essa compilação, o bytecode é interpretado ou executado em tempo de execução por uma máquina virtual específica para a linguagem.
+
+
+No Java, o código-fonte é compilado para bytecode (.class), que pode ser executado em qualquer plataforma que tenha a Java Virtual Machine (JVM). A JVM interpreta o bytecode e o executa, tornando o Java portátil entre diferentes sistemas operacionais.
+No Python, o código-fonte é compilado para bytecode (arquivos .pyc), mas esse bytecode ainda precisa ser interpretado pelo interpretador Python, o que torna a execução mais lenta do que um programa totalmente compilado para código de máquina.
+
+5- 
+Montador: O montador é o programa do sistema responsável por traduzir o código assembly em linguagem de máquina, traduzindo cada instrução do programa para a sequência de bits que codifica a instrução de máquina. Como cada processador tem sua própria linguagem, os montadores são específicos para processadores.
+Tradutor: Os tradutores são programas que convertem o programa do usuário escrito em uma linguagem para uma outra linguagem. Ou seja, o objetivo deste programa tradutor é aceitar um conjunto de instruções escritas em uma linguagem de programação de alto nível, que é independente da máquina, e fazer com que as atividades especificadas por estas instruções sejam executadas pelo computador. Os dois tipos principais de tradutores são os interpretadores e os compiladores.
+Cross-compiler: Um Compilador Cruzado (também conhecido como Cross-compiler) é um tipo de compilador que é capaz de gerar código executável para uma plataforma de hardware diferente daquela em que o compilador é executado. Isso significa que o compilador pode ser executado em uma plataforma, como um computador desktop, mas é capaz de gerar código para uma plataforma diferente, como um dispositivo embarcado, sem a necessidade de instalar um compilador nativo na plataforma de destino.
+Compilação just-in-time: O JIT (Just-In-Time) é uma técnica de compilação utilizada em linguagens de programação interpretadas para melhorar o desempenho da execução de código. Em vez de traduzir o código-fonte para código de máquina antes de executá-lo, o JIT compila o código sob demanda durante a execução do programa.
+
+
+6- No texto, nos é apresentado o conceito de paradigmas de programação, que são modelos para estruturar e representar problemas construídos a partir de uma linguagem de programação, os principais tipos de paradigmas são imperativo, lógico, funcional, orientado a eventos e orientado a objetos, e a importância de estudar eles são: aumento da capacidade intelectual influenciada pelo conhecimento de diferentes linguagens, diminuição da limitação de formas para se resolver um problema e maior conhecimento sobre a linguagem mais adequada de acordo com o projeto.
+Também são apresentados os critérios de avaliação das linguagens de programação e os métodos de implementação dessas linguagens. Os critérios de avaliação consistem em legibilidade, capacidade de escrita, simplicidade, expressividade e custo, já os métodos de implementação são compostos de compiladores, onde os programas são traduzidos para linguagem de máquina, interpretadores puros, que consistem em programas serem interpretados por outro programa, e híbridos, no qual sistemas convertem programas em linguagens de alto nível para uma linguagem intermediária e então são interpretados.
