@@ -13,8 +13,7 @@
 // PROTECTED/      x       x        x
 // DEFAULT/        x       x
 // PRIVATE/        x
-
-
+import java.util.Random;
 
 public class NossoVetor {
     private int[] vetor;
@@ -32,19 +31,28 @@ public class NossoVetor {
         // ocupacao = 0
         this(3);
     }
-    private void aumentaVetor() {
-        int[] temp = new int[vetor.length * 2];
-        for (int i = 0; i < vetor.length; i++) {
+    // private void aumentaVetor() {
+    //     int[] temp = new int[vetor.length * 2];
+    //     for (int i = 0; i < ocupacao; i++)
+    //         temp[i] = vetor[i];
+    //     vetor = temp;
+    // }
+    // private void reduzVetor() {
+    //     int[] temp = new int[vetor.length / 2];
+    //     for (int i = 0; i < ocupacao; i++)
+    //         temp[i] = vetor[i];
+    //     vetor = temp;
+    // }
+    private void redimensionaVetor(int novoTamanho) {
+        int[] temp = new int[novoTamanho];
+        for (int i = 0; i < ocupacao; i++)
             temp[i] = vetor[i];
-        }
-        vetor = temp;
     }
     public void insere (int i) {
         if (estaCheio()) {
-            aumentaVetor();
+            redimensionaVetor(vetor.length * 2);
         }
-            vetor[ocupacao] = i;
-            ocupacao++;
+            vetor[ocupacao++] = i;
     }
     public boolean estaCheio() {
         // MAIS ETAPAS
@@ -60,8 +68,15 @@ public class NossoVetor {
     }
     public int remove() {
         // ocupacao--;
-        if (!estaVazio())
-            return vetor[ocupacao--];
+        // if (!estaVazio())
+        //     return vetor[ocupacao--];
+        // return -1;
+        if (!estaVazio()) {
+            int aux = vetor[--ocupacao];
+            if (vetor.length >= 6 && ocupacao <= vetor.length / 4)
+                redimensionaVetor(vetor.length / 2);
+            return aux;
+        }
         return -1;
     }
     @Override
@@ -71,5 +86,15 @@ public class NossoVetor {
             s += vetor[i] + " ";
         }
         return s + "\n";
+    }
+    int getTamanho() {
+        return vetor.length;
+    }
+    public void preencheVetor() {
+        Random random = new Random();
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = random.nextInt(vetor.length * 10);
+        }
+        ocupacao = vetor.length;
     }
 }
