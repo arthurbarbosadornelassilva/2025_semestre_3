@@ -5,3 +5,18 @@ EXERCÍCIOS:
 2 - Especificação de uma linguagem: são os critérios utilizados naquela linguagem, englobando o conjunto de todas as suas características (exemplo: documentação do Java);          Implementação de uma linguagem: é a aplicação desses critérios, de forma a abstrair as especificações (exemplo: criar um loop em Java).
 
 3 - O primeiro vídeo fala mais sobre quais as vantagens de aprender a programar e o quê podemos fazer com a programação na atualidade, afirmando que os 'programadores são como os rocksstars da atualidade'. O segundo vídeo já é mais nichado, e busca informar as diferenças entre as linguagens de programação e como elas funcionam, sendo mais que uma 'propaganda audiovisual que exalta as vantagens de ser um programador'.
+
+4 - Em desenvolvimento de software, o conhecimento de diferentes Linguagens de Programação se torna importante na decisão da linguagem mais adequada na criação de determinado projeto.
+Já na programação, o conhecimento em Linguagens de Programaçã se torna importante para que possamos trabalhar a lógica e a estrutura dos dados da maneira mais eficiente.
+
+5 - Argumentos a favor: tornam o código menos suectível a erros e mais expressivo;
+    Argumwntos contra: a programação em Java se torna mais complexa e  menos portável (exige maiores adaptações ao transferirmos o código).
+
+6 - 
+A arquitetura de computadores e a criação de linguagens de progração estão interligados. Compreender ambos é essencial para o desenvolvimento de um sftware eficiente e de alto desempenho.
+Essa relaçao pode ser evidenciada em aspectos como:
+1 - Instructure Set Architecture (ISA): a ISA define o conjunto de operações que um processador pode executar. Linguagens de programação são projetadas para abstrair e facilitar o uso eficiente dessas operações;
+2 - Hierarquia de Memória: organização da memória, incluindo caches, memória principal e armazenamento secundário, influencia a forma como as linguagens gerenciam dados. Linguagens de programação incorporam conceitos como ponteiros e alocação dinâmica para otimizar o uso da memória;
+3 - Paralelismo e Concorrência: linguagens de programação evoluíram para suportar modelos de concorrência e paralelismo, permitindo que os desenvolvedores escrevam código que tire proveito dessas arquiteturas, melhorando o desempenho e a eficiência;
+4 - Abstração e Portabilidade: linguagens de alto nível abstraem detalhes específicos da arquitetura de hardware, permitindo que o mesmo código seja executado em diferentes plataformas com mínima modificação. Essa portabilidade é alcançada através de compiladores e interpretadores que traduzem o código para a linguagem de máquina específicada;
+5 - Otimização de Arquitetura: design de linguagens de programação considera as características específicas da arquitetura de hardware para otimizar o desempenho
