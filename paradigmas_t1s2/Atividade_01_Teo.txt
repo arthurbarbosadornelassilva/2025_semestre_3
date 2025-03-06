@@ -1,0 +1,65 @@
+** ATIVIDADE 01 - TEORIA**
+
+
+EXERCÍCIOS LISTA 01
+
+1 -)
+Conceitos Importantes (Capítulo 2 - 'Princípios de Linguagens de Programação'):
+
+- Compiladores: realizam a tradução das instruções do programa para linguagem de máquina, fazendo com que seja possível executá-lo na máquina.
+- Interpretadores: realizam a 'tradução' e execução do programa linha por linha, sem a necessidade de transformar o códgo em uma única unidade de execução.
+- Sintaxe: define a forma como os programas devem ser escritos em uma linguagem. A sintaxe é projetada para facilitar a escrita e a manipulação do código, considerando requisitos, expressividade, paradigma, implementação e eficiência
+- Semântica: representa a 'interpretação do signifcado' de cada um dos elementos da linguagem, ou seja, a interpretação de sua sintaxe.
+
+2 -)
+Especificação de uma linguagem: são os critérios utilizados naquela linguagem, englobando o conjunto de todas as suas características (exemplo: documentação do Java);
+Implementação de uma linguagem: é a aplicação desses critérios, de forma a abstrair as especificações (exemplo: criar um loop em Java).
+
+4 -)
+
+6 -)
+
+EXERCÍCIOS LISTA 02
+
+1 -)
+https://miro.com/app/board/uXjVKnC6H1M=/?share_link_id=209338409377
+
+4- )
+Compilação Pura
+
+ Na compilação pura, o código-fonte é completamente convertido em código de máquina antes da execução. Isso significa que o código é traduzido para uma linguagem que o processador do computador entende diretamente. Após esse processo, o programa é salvo como um arquivo executável, e a execução é rápida, pois o código já está pronto para ser processado sem necessidade de interpretação posterior.
+
+ Exemplos de linguagens compiladas de forma pura incluem C e C++.
+
+
+Interpretação Pura
+
+ Em linguagens interpretadas, o código-fonte é lido e executado linha por linha por um interpretador. Isso significa que não há um processo de tradução para código de máquina prévio. O interpretador traduz e executa as instruções em tempo real, o que torna a execução mais lenta em comparação com as linguagens compiladas. Esse modelo é mais flexível e pode facilitar a depuração, mas em termos de desempenho, tende a ser menos eficiente.
+
+ Exemplos de linguagens interpretadas puras incluem JavaScript (quando executado no navegador) e Bash.
+
+
+Compilação Híbrida (Meio a Meio)
+
+ Algumas linguagens utilizam um modelo híbrido, onde o código-fonte é primeiro compilado para um código intermediário (geralmente chamado de bytecode), que não é código de máquina, mas é uma representação que pode ser facilmente interpretada e executada por uma máquina virtual (VM). Após essa compilação, o bytecode é interpretado ou executado em tempo de execução por uma máquina virtual específica para a linguagem.
+
+
+No Java, o código-fonte é compilado para bytecode (.class), que pode ser executado em qualquer plataforma que tenha a Java Virtual Machine (JVM). A JVM interpreta o bytecode e o executa, tornando o Java portátil entre diferentes sistemas operacionais.
+No Python, o código-fonte é compilado para bytecode (arquivos .pyc), mas esse bytecode ainda precisa ser interpretado pelo interpretador Python, o que torna a execução mais lenta do que um programa totalmente compilado para código de máquina.
+
+5- )
+Montador: O montador é o programa do sistema responsável por traduzir o código assembly em linguagem de máquina, traduzindo cada instrução do programa para a sequência de bits que codifica a instrução de máquina. Como cada processador tem sua própria linguagem, os montadores são específicos para processadores.
+Tradutor: Os tradutores são programas que convertem o programa do usuário escrito em uma linguagem para uma outra linguagem. Ou seja, o objetivo deste programa tradutor é aceitar um conjunto de instruções escritas em uma linguagem de programação de alto nível, que é independente da máquina, e fazer com que as atividades especificadas por estas instruções sejam executadas pelo computador. Os dois tipos principais de tradutores são os interpretadores e os compiladores.
+Cross-compiler: Um Compilador Cruzado (também conhecido como Cross-compiler) é um tipo de compilador que é capaz de gerar código executável para uma plataforma de hardware diferente daquela em que o compilador é executado. Isso significa que o compilador pode ser executado em uma plataforma, como um computador desktop, mas é capaz de gerar código para uma plataforma diferente, como um dispositivo embarcado, sem a necessidade de instalar um compilador nativo na plataforma de destino.
+Compilação just-in-time: O JIT (Just-In-Time) é uma técnica de compilação utilizada em linguagens de programação interpretadas para melhorar o desempenho da execução de código. Em vez de traduzir o código-fonte para código de máquina antes de executá-lo, o JIT compila o código sob demanda durante a execução do programa.
+
+
+6- )
+No texto, nos é apresentado o conceito de paradigmas de programação, que são modelos para estruturar e representar problemas construídos a partir de uma linguagem de programação, os principais tipos de paradigmas são imperativo, lógico, funcional, orientado a eventos e orientado a objetos, e a importância de estudar eles são: aumento da capacidade intelectual influenciada pelo conhecimento de diferentes linguagens, diminuição da limitação de formas para se resolver um problema e maior conhecimento sobre a linguagem mais adequada de acordo com o projeto.
+Também são apresentados os critérios de avaliação das linguagens de programação e os métodos de implementação dessas linguagens. Os critérios de avaliação consistem em legibilidade, capacidade de escrita, simplicidade, expressividade e custo, já os métodos de implementação são compostos de compiladores, onde os programas são traduzidos para linguagem de máquina, interpretadores puros, que consistem em programas serem interpretados por outro programa, e híbridos, no qual sistemas convertem programas em linguagens de alto nível para uma linguagem intermediária e então são interpretados.
+
+
+EXERCÍCIOS QUE NÃO CONSTAM NA LISTA 1 E NA LISTA 2:
+
+Leia o Capítulo “Introdução a Compiladores” (da página 13 até 28) e escreva um breve resumo do seu conteúdo:
+

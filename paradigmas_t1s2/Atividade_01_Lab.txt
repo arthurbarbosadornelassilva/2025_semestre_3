@@ -1,0 +1,359 @@
+**ATIVIDADE 01 - LABORATORIO**
+
+EXERCICIOS LISTA 1 PT.2
+
+1)
+#include <stdio.h>
+
+int findConta(int *conta, int cc[1000], int n);
+void openConta(int conta, float *saldo, int cc[1000], int *n);
+void fazerDeposito(float saldo[1000], int i);
+void fazerSaque(float saldo[1000], int i);
+void fazerPIX(float saldo[1000], int i, float saldo_destino[1000], int j);
+float tomaValor(void);
+void menu(int *p);
+
+int main(void) {
+    int cc[1000], n = 0, i, j, op, conta, conta_destino;
+    float saldo[1000];
+
+    for (i = 0; i < 1000; i++) {
+        cc[i] = 0;
+        saldo[i] = 0;
+    }
+
+    do {
+        menu(&op);
+        if (op == 1) {
+            i = findConta(&conta, cc, n);
+            if (i != n) 
+                printf("Esta conta-corrente já existe\n");
+            else 
+                openConta(conta, saldo, cc, &n);
+        }
+        if (op == 2) {
+            i = findConta(&conta, cc, n);
+            if (i == n) 
+                printf("Número de conta-corrente inválido\n");
+            else 
+                printf("Saldo: %.2f\n", saldo[i]);
+        }
+        if (op == 3) {
+            i = findConta(&conta, cc, n);
+            if (i == n) 
+                printf("Número de conta-corrente inválido\n");
+            else 
+                fazerDeposito(saldo, i);
+        }
+        if (op == 4) {
+            i = findConta(&conta, cc, n);
+            if (i == n) 
+                printf("Número de conta inválido\n");
+            else 
+                fazerSaque(saldo, i);
+        }
+        if (op == 5) {
+            i = findConta(&conta, cc, n);
+            j = findConta(&conta_destino, cc, n);
+            if (i == n || j == n) 
+                printf("Conta inválida\n");
+            else 
+                fazerPIX(saldo, i, saldo, j);
+        }
+    } while (op != 6);
+
+    return 0;
+}
+
+void menu(int *p) {
+    printf("1) Abrir conta\n");
+    printf("2) Verificar saldo\n");
+    printf("3) Fazer Depósito\n");
+    printf("4) Fazer Saque\n");
+    printf("5) Fazer PIX\n");
+    printf("6) Sair do sistema\n");
+    scanf("%d", p);
+}
+
+int findConta(int *conta, int cc[1000], int n) {
+    int j;
+    printf("Número da conta: ");
+    scanf("%d", conta);
+    for (j = 0; j < n && *conta != cc[j]; j++);
+    return j;
+}
+
+void openConta(int conta, float *saldo, int cc[1000], int *n) {
+    float valor;
+    printf("Valor do depósito inicial: ");
+    valor = tomaValor();
+    cc[*n] = conta;
+    saldo[*n] = valor;
+    (*n)++;
+    printf("Operação realizada com sucesso\n");
+}
+
+void fazerDeposito(float saldo[1000], int i) {
+    float valor;
+    printf("Valor do depósito: ");
+    valor = tomaValor();
+    saldo[i] += valor;
+    printf("Operação realizada com sucesso\n");
+}
+
+void fazerSaque(float saldo[1000], int i) {
+    float valor;
+    printf("Valor do saque: ");
+    valor = tomaValor();
+    if (valor > saldo[i])
+        printf("Saldo insuficiente\n");
+    else {
+        saldo[i] -= valor;
+        printf("Operação realizada com sucesso\n");
+    }
+}
+
+void fazerPIX(float saldo[1000], int i, float saldo_destino[1000], int j) {
+    float valor;
+    printf("Valor do PIX: ");
+    valor = tomaValor();
+    if (valor > saldo[i])
+        printf("Saldo insuficiente\n");
+    else {
+        saldo[i] -= valor;
+        saldo_destino[j] += valor;
+        printf("PIX realizado com sucesso\n");
+    }
+}
+
+float tomaValor(void) {
+    float valor;
+    scanf("%f", &valor);
+    while (valor <= 0) {
+        printf("O valor deve ser positivo.\n");
+        printf("Valor: ");
+        scanf("%f", &valor);
+    }
+    return valor;
+}
+
+2)
+#include <stdio.h>
+
+void lerMatriz(int A[3][3]);
+void imprimirMatriz(int A[3][3]);
+void multiplicarMatrizes(int A[3][3], int B[3][3], int C[3][3]);
+void somarMatrizes(int A[3][3], int B[3][3], int C[3][3]);
+void subtrairMatrizes(int A[3][3], int B[3][3], int C[3][3]);
+void transporMatriz(int A[3][3], int C[3][3]);
+
+int main() {
+    int A[3][3], B[3][3], C[3][3], op;
+
+    printf("Digite os valores da matriz A:\n");
+    lerMatriz(A);
+
+    printf("Digite os valores da matriz B:\n");
+    lerMatriz(B);
+
+    do {
+        printf("Escolha uma operação:\n");
+        printf("(1) C = A * B\n");
+        printf("(2) C = A - B\n");
+        printf("(3) C = A + B\n");
+        printf("(4) A transposta da matriz C, sendo que C = A * B\n");
+        printf("(5) Sair\n");
+        scanf("%d", &op);
+
+        switch (op) {
+            case 1:
+                multiplicarMatrizes(A, B, C);
+                imprimirMatriz(C);
+                break;
+            case 2:
+                subtrairMatrizes(A, B, C);
+                imprimirMatriz(C);
+                break;
+            case 3:
+                somarMatrizes(A, B, C);
+                imprimirMatriz(C);
+                break;
+            case 4:
+                multiplicarMatrizes(A, B, C);
+                transporMatriz(C, C);
+                imprimirMatriz(C);
+                break;
+        }
+    } while (op != 5);
+
+    return 0;
+}
+
+void lerMatriz(int A[3][3]) {
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            scanf("%d", &A[i][j]);
+}
+
+void imprimirMatriz(int A[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++)
+            printf("%d ", A[i][j]);
+        printf("\n");
+    }
+}
+
+void multiplicarMatrizes(int A[3][3], int B[3][3], int C[3][3]) {
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++) {
+            C[i][j] = 0;
+            for (int k = 0; k < 3; k++)
+                C[i][j] += A[i][k] * B[k][j];
+        }
+}
+
+void somarMatrizes(int A[3][3], int B[3][3], int C[3][3]) {
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            C[i][j] = A[i][j] + B[i][j];
+}
+
+void subtrairMatrizes(int A[3][3], int B[3][3], int C[3][3]) {
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            C[i][j] = A[i][j] - B[i][j];
+}
+
+void transporMatriz(int A[3][3], int C[3][3]) {
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            C[j][i] = A[i][j];
+}
+
+3)
+#include <stdio.h>
+
+void ordenarDecrescente(int vetor[], int tamanho);
+
+int main() {
+    int vetor[10];
+
+    printf("Digite 10 valores:\n");
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &vetor[i]);
+    }
+
+    ordenarDecrescente(vetor, 10);
+
+    printf("Valores em ordem decrescente:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", vetor[i]);
+    }
+    
+    return 0;
+}
+
+void ordenarDecrescente(int vetor[], int tamanho) {
+    int temp;
+    for (int i = 0; i < tamanho - 1; i++) {
+        for (int j = i + 1; j < tamanho; j++) {
+            if (vetor[i] < vetor[j]) {
+                temp = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = temp;
+            }
+        }
+    }
+}
+
+4)
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_PROJETOS 100
+
+typedef struct {
+    char nome[50];
+    char area[20];  // Marketing, Operacional ou Inovação
+    float valor;
+    char data_inicio[11];
+    int duracao;
+} Projeto;
+
+void cadastrarProjeto(Projeto projetos[], int *numProjetos);
+void listarProjetos(Projeto projetos[], int numProjetos);
+
+int main() {
+    Projeto projetos[MAX_PROJETOS];
+    int numProjetos = 0, opcao;
+
+    do {
+        printf("\n1 - Cadastrar Projeto\n");
+        printf("2 - Listar Projetos\n");
+        printf("3 - Sair\n");
+        printf("Escolha: ");
+        scanf("%d", &opcao);
+        getchar();  
+
+        switch (opcao) {
+            case 1:
+                cadastrarProjeto(projetos, &numProjetos);
+                break;
+            case 2:
+                listarProjetos(projetos, numProjetos);
+                break;
+        }
+    } while (opcao != 3);
+
+    return 0;
+}
+
+void cadastrarProjeto(Projeto projetos[], int *numProjetos) {
+    if (*numProjetos >= MAX_PROJETOS) {
+        printf("Número máximo de projetos atingido!\n");
+        return;
+    }
+
+    printf("Nome do projeto: ");
+    fgets(projetos[*numProjetos].nome, 50, stdin);
+    projetos[*numProjetos].nome[strcspn(projetos[*numProjetos].nome, "\n")] = 0;
+
+    printf("Área (Marketing, Operacional, Inovação): ");
+    fgets(projetos[*numProjetos].area, 20, stdin);
+    projetos[*numProjetos].area[strcspn(projetos[*numProjetos].area, "\n")] = 0;
+
+    printf("Valor total do projeto: ");
+    scanf("%f", &projetos[*numProjetos].valor);
+    getchar();
+
+    printf("Data de início (dd/mm/aaaa): ");
+    fgets(projetos[*numProjetos].data_inicio, 11, stdin);
+    projetos[*numProjetos].data_inicio[strcspn(projetos[*numProjetos].data_inicio, "\n")] = 0;
+
+    printf("Duração (em meses): ");
+    scanf("%d", &projetos[*numProjetos].duracao);
+    getchar();
+
+    (*numProjetos)++;
+    printf("Projeto cadastrado com sucesso!\n");
+}
+
+void listarProjetos(Projeto projetos[], int numProjetos) {
+    if (numProjetos == 0) {
+        printf("Nenhum projeto cadastrado.\n");
+        return;
+    }
+
+    printf("\nLista de Projetos:\n");
+    for (int i = 0; i < numProjetos; i++) {
+        printf("\nProjeto %d:\n", i + 1);
+        printf("Nome: %s\n", projetos[i].nome);
+        printf("Área: %s\n", projetos[i].area);
+        printf("Valor: %.2f\n", projetos[i].valor);
+        printf("Data de Início: %s\n", projetos[i].data_inicio);
+        printf("Duração: %d meses\n", projetos[i].duracao);
+    }
+}
+
+EXERCICIOS LISTA 2
+
