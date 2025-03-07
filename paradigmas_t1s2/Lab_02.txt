@@ -50,3 +50,78 @@ int main()
     
     return 0;
 }
+
+EXERCÍCIOS:
+
+1 -)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define LINHAS 3
+#define COLUNAS 3
+
+int main(int argc, char *argv[])
+{
+    // declaração de variável ponteiro para ponteiro
+    int **mat;
+    // alocando o vetor de ponteiros
+    mat = (int **)malloc(LINHAS * sizeof(int *));
+    // alocando cada uma das linhas da matriz
+    int i;
+    for (i = 0; i < LINHAS; i++)
+        mat[i] = (int *)malloc(COLUNAS * sizeof(int));
+    int j;
+    // preenchendo a matriz
+    for (i = 0; i < LINHAS; i++)
+    {
+        for (j = 0; j < COLUNAS; j++)
+            mat[i][j] = i + j;
+    }
+    // mostrando os elementos da matriz
+    for (i = 0; i < LINHAS; i++)
+    {
+        for (j = 0; j < COLUNAS; j++)
+            printf("%d\t", mat[i][j]);
+        printf("\n");
+    }
+
+    // CRIANDO MATRIZ B
+    int matb[3][2] = {3, 4, 5, 6, 7, 8};
+
+    printf("%i", matb);
+
+    // liberando o espaço de memória
+    // libera cada linha
+    for (i = 0; i < LINHAS; i++)
+        free(mat[i]);
+    // libera o vetor de ponteiros
+    free(mat);
+    return 0;
+}
+
+2 -)
+#include <stdio.h>
+
+int main() {
+    float decimal;
+    char str[20];
+    float *ptrFloat;
+    char *ptrStr;
+
+    printf("Alocação dinâmica de memória \n\nInsira um valor decimal abaixo:\n");
+    scanf("%f", &decimal);
+
+    ptrFloat = &decimal;
+    printf("\nValor Decimal: %4.1f", *ptrFloat);
+
+    // Conversão do valor decimal para string
+    sprintf(str, "%.2f", *ptrFloat);
+
+    ptrStr = str; // CORRETO: str já é o endereço do primeiro caractere
+    printf("\nValor String Convertida: %s", ptrStr);
+
+    // Os valores armazenados nos ponteiros são alojados na memória da stack, e não foram alocados dinamicamente nesse caso, portanto não consigo utilizar "free()"
+
+    return 0;
+}

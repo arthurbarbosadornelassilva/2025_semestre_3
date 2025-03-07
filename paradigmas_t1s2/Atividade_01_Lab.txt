@@ -1,6 +1,6 @@
 **ATIVIDADE 01 - LABORATORIO**
 
-EXERCICIOS LISTA 1 PT.2
+EXERCICIOS LISTA 1 PT.2 
 
 1)
 #include <stdio.h>
@@ -357,3 +357,162 @@ void listarProjetos(Projeto projetos[], int numProjetos) {
 
 EXERCICIOS LISTA 2
 
+1 -)
+#include <stdio.h>
+#include <stdlib.h>
+
+#define LINHAS 3
+#define COLUNAS 3
+
+int main(int argc, char *argv[])
+{
+    // declaração de variável ponteiro para ponteiro
+    int **mat;
+    // alocando o vetor de ponteiros
+    mat = (int **)malloc(LINHAS * sizeof(int *));
+    // alocando cada uma das linhas da matriz
+    int i;
+    for (i = 0; i < LINHAS; i++)
+        mat[i] = (int *)malloc(COLUNAS * sizeof(int));
+    int j;
+    // preenchendo a matriz
+    for (i = 0; i < LINHAS; i++)
+    {
+        for (j = 0; j < COLUNAS; j++)
+            mat[i][j] = i + j;
+    }
+    // mostrando os elementos da matriz
+    for (i = 0; i < LINHAS; i++)
+    {
+        for (j = 0; j < COLUNAS; j++)
+            printf("%d\t", mat[i][j]);
+        printf("\n");
+    }
+
+    //----
+
+    // criando matrizes B & C
+    int matb[3][3] = {3, 4, 5, 6, 7, 8, 9, 10, 11};
+    int matc[3][3];
+
+    // mostrando elementos da matriz B
+    printf("\n\n");
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++)
+            printf("%d\t", matb[i][j]);
+        printf("\n");
+    }
+
+    // Soma de matrizes
+    printf("\n\n");
+    for(i = 0; i < LINHAS; i++) {    // índice das linhas
+        for(j = 0; j < COLUNAS; j++)  // índice das colunas
+            matc[i][j] = mat[i][j] + matb[i][j];
+    }
+
+    for(i = 0; i < LINHAS; i++) {    // índice das linhas
+        for(j = 0; j < COLUNAS; j++)  // índice das colunas
+            printf("%d\t", matc[i][j]);
+        printf("\n");
+    }
+
+    // liberando o espaço de memória
+    // libera cada linha
+    for (i = 0; i < LINHAS; i++)
+        free(mat[i]);
+    // libera o vetor de ponteiros
+    free(mat);
+    return 0;
+}
+
+2 -)
+#include <stdio.h>
+
+int main() {
+    float decimal;
+    char str[20];
+    float *ptrFloat;
+    char *ptrStr;
+
+    printf("Alocação dinâmica de memória \n\nInsira um valor decimal abaixo:\n");
+    scanf("%f", &decimal);
+
+    ptrFloat = &decimal;
+    printf("\nValor Decimal: %4.1f", *ptrFloat);
+
+    // Conversão do valor decimal para string
+    sprintf(str, "%.2f", *ptrFloat);
+
+    ptrStr = str; // CORRETO: str já é o endereço do primeiro caractere
+    printf("\nValor String Convertida: %s", ptrStr);
+
+    // Os valores armazenados nos ponteiros são alojados na memória da stack, e não foram alocados dinamicamente nesse caso, portanto não consigo utilizar "free()"
+
+    return 0;
+}
+
+
+***EXERCÍCIOS QUE NÃO CONSTAM NA LISTA 1-LAB E NA LISTA 2-LAB:
+
+1) Crie um programa em C que manipule arquivo texto (com uso de Fopen(), por exemplo).
+
+#include <stdio.h>
+
+int main() {
+    FILE *arquivo;
+
+    arquivo = fopen("gatos.txt", "w");
+
+    if (arquivo == NULL) {
+        printf("Erro ao criar arquivo\n");
+        return 1;
+    }
+
+    fprintf(arquivo, "Eu amo gatos S2\n");
+    fclose(arquivo);
+
+    printf("Arquivo criado\n");
+    return 0;
+}
+
+2) Crie um programa em C que manipule strings (com operações de busca nas strings, concatenação de strings, etc.)
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[100], str2[100], palavra[50], strConcatenada[200];
+
+    // Solicita ao usuário que insira duas strings
+    printf("Digite a primeira string: ");
+    fgets(str1, sizeof(str1), stdin);
+    str1[strcspn(str1, "\n")] = '\0'; // Remove o '\n' do fgets
+
+    printf("Digite a segunda string: ");
+    fgets(str2, sizeof(str2), stdin);
+    str2[strcspn(str2, "\n")] = '\0'; // Remove o '\n'
+
+    // Concatenação das strings
+    strcpy(strConcatenada, str1);
+    strcat(strConcatenada, " "); // Adiciona espaço entre as palavras
+    strcat(strConcatenada, str2);
+
+    printf("\nString concatenada: %s\n", strConcatenada);
+
+    // Tamanho das strings
+    printf("Tamanho da primeira string: %lu\n", strlen(str1));
+    printf("Tamanho da segunda string: %lu\n", strlen(str2));
+    printf("Tamanho da string concatenada: %lu\n", strlen(strConcatenada));
+
+    // Busca de palavra dentro da string concatenada
+    printf("\nDigite uma palavra para buscar na string concatenada: ");
+    fgets(palavra, sizeof(palavra), stdin);
+    palavra[strcspn(palavra, "\n")] = '\0'; // Remove o '\n'
+
+    if (strstr(strConcatenada, palavra)) {
+        printf("A palavra \"%s\" foi encontrada na string concatenada!\n", palavra);
+    } else {
+        printf("A palavra \"%s\" NÃO foi encontrada na string concatenada.\n", palavra);
+    }
+
+    return 0;
+}
