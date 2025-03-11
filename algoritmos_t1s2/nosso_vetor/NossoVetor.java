@@ -29,72 +29,111 @@ public class NossoVetor {
     public NossoVetor() {
         // vetor = new int[10];
         // ocupacao = 0
-        this(3);
-    }
-    // private void aumentaVetor() {
-    //     int[] temp = new int[vetor.length * 2];
-    //     for (int i = 0; i < ocupacao; i++)
-    //         temp[i] = vetor[i];
-    //     vetor = temp;
-    // }
-    // private void reduzVetor() {
-    //     int[] temp = new int[vetor.length / 2];
-    //     for (int i = 0; i < ocupacao; i++)
-    //         temp[i] = vetor[i];
-    //     vetor = temp;
-    // }
-    private void redimensionaVetor(int novoTamanho) {
-        int[] temp = new int[novoTamanho];
-        for (int i = 0; i < ocupacao; i++)
-            temp[i] = vetor[i];
-    }
-    public void insere (int i) {
-        if (estaCheio()) {
-            redimensionaVetor(vetor.length * 2);
-        }
-            vetor[ocupacao++] = i;
-    }
-    public boolean estaCheio() {
-        // MAIS ETAPAS
-        // if (ocupacao == vetor.length)
-        //     return true;
-        // return false;
-
-        // MENOS ETAPAS
-        return ocupacao == vetor.length;
-    }
-    public boolean estaVazio() {
-        return ocupacao == 0;
-    }
-    public int remove() {
-        // ocupacao--;
-        // if (!estaVazio())
-        //     return vetor[ocupacao--];
-        // return -1;
-        if (!estaVazio()) {
-            int aux = vetor[--ocupacao];
-            if (vetor.length >= 6 && ocupacao <= vetor.length / 4)
-                redimensionaVetor(vetor.length / 2);
-            return aux;
-        }
-        return -1;
-    }
-    @Override
-    public String toString() {
-        String s = "ocupacao = " + ocupacao + "\n";
-        for (int i = 0; i < ocupacao; i++) {
-            s += vetor[i] + " ";
-        }
-        return s + "\n";
-    }
-    int getTamanho() {
-        return vetor.length;
-    }
-    public void preencheVetor() {
-        Random random = new Random();
-        for (int i = 0; i < vetor.length; i++) {
-            vetor[i] = random.nextInt(vetor.length * 10);
-        }
-        ocupacao = vetor.length;
-    }
+        this(10); // Construtor 
+    } 
+ 
+    // void aumentarVetor() { 
+    //     int[] temp = new int[vetor.length * 2]; 
+    //     for (int i = 0; i<ocupacao; i++) { 
+    //         temp[i] = vetor[i]; 
+    //     } 
+    //     vetor = temp; 
+    // } 
+    // void reduzVetor(){ 
+    //     int []temp = new int[vetor.length/2]; 
+    //     for (int i=0; i<ocupacao; i++){ 
+    //         temp[i] = vetor[i]; 
+    //     } 
+    //     vetor = temp; 
+    // } 
+ 
+    // Flexibiliza o código 
+    void redimensionarVetor(int NovoTamanho) { 
+        int[] temp = new int[NovoTamanho]; 
+        for (int i = 0; i<ocupacao; i++) { 
+            temp[i] = vetor[i]; 
+        } 
+        vetor = temp; 
+    } 
+ 
+    public void insere(int i) { 
+        if (estaCheio()) { 
+            redimensionarVetor(vetor.length*2); 
+        } 
+        vetor[ocupacao++] = i; 
+    } 
+ 
+    public boolean estaCheio() { 
+        // Compilador faz a verificação (verdadeiro ou falso) 
+        return ocupacao == vetor.length; 
+    } 
+ 
+    public boolean estaVazio() { 
+        return ocupacao == 0; 
+    } 
+ 
+    // public int remove() { 
+    //     if (!estaVazio()){ 
+    //         int aux = vetor[--ocupacao]; 
+    //         if (vetor.length>=6 && ocupacao <= vetor.length/4){ 
+    //             redimensionarVetor(vetor.length/2); 
+    //         } return aux; 
+    //     } 
+    //     return -1; 
+    // } 
+    public int remove() { 
+        if (estaVazio()) { 
+            throw new VetorVazioException("Vetor vazio, nao ha o que remover"); 
+        } 
+        int aux = vetor[--ocupacao]; 
+        if (vetor.length >= 6 && ocupacao <= vetor.length / 4) { 
+            redimensionarVetor(vetor.length / 2); 
+        } 
+        return aux; 
+        } 
+        public boolean contem (int elemento) { 
+            for (int i=0; i< ocupacao; i++) 
+            if (vetor[i] == elemento) 
+            return true; 
+        return false; 
+        } 
+        public int indiceDe (int elemento) { 
+            if (estaVazio()) 
+                throw new VetorVazioException("vetor esta vazio"); 
+            for (int i=0; i<ocupacao; i++) 
+                if (vetor[i] == elemento) 
+                    return i; 
+            throw new ElementoNaoEncontradoException(elemento + " nao encontrado"); 
+        } 
+ 
+    @Override 
+    public String toString() { 
+        String s = "ocupacao = " + ocupacao + "\n"; 
+        for (int i = 0; i < ocupacao; i++) { 
+            s += vetor[i] + " "; 
+        } 
+        return s + "\n"; 
+    } 
+    public int getTamanho(){ 
+        return vetor.length; 
+    } 
+    public void preencheVetor(){ 
+        Random random = new Random(); 
+        for (int i=0; i<vetor.length; i++){ 
+            vetor[i] = random.nextInt(vetor.length*10); 
+ 
+        } 
+        ocupacao = vetor.length; 
+    } 
+} 
+class VetorVazioException extends RuntimeException { 
+    public VetorVazioException(String msg) { 
+        super(msg); 
+    } 
+} 
+class ElementoNaoEncontradoException extends RuntimeException { 
+    public ElementoNaoEncontradoException(String msg) { 
+        super(msg); 
+    } 
+ 
 }
