@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Date;
+import java.util.Calendar;
 
 public class TesteOrdenacao {
     public static void main(String[] args) {
@@ -10,8 +12,14 @@ public class TesteOrdenacao {
         while (t > 0) {
             v = new NossoVetor(t);
             v.preencheVetor();
-            System.out.println(v);
-            System.out.println("Escolha um novo tamanho para o vetor: ");
+            // System.out.println("Vetor Original: \n" + v);
+            Date ini = Calendar.getInstance().getTime();
+            v.bubbleSort();
+            Date fim = Calendar.getInstance().getTime();
+            long tempoDemora = fim.getTime() - ini.getTime();
+            System.out.println("Tempo de demora: " + tempoDemora + " ms");
+            // System.out.println("Vetor Ordenado: \n" + v);
+            System.out.println("Escolha um novo tamanho para o vetor, 0 encerra: ");
             t = scanner.nextInt();
         }
         scanner.close();
