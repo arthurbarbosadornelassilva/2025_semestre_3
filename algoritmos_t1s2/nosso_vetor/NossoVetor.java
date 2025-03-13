@@ -125,6 +125,7 @@ public class NossoVetor {
         } 
         ocupacao = vetor.length; 
     } 
+    // Métodos de Ordenação
     public void bubbleSort() {
         for (int i = 1; i < vetor.length - 1; i++) {
             for (int j = 0; j < vetor.length - i; j++) {
@@ -135,6 +136,27 @@ public class NossoVetor {
                 }
             }
         }
+    }
+    public void selectionsort ()
+    {
+        for (int i = 0; i < vetor.length-1; ++i) {
+            int min = i;
+            for (int j = i+1; j < vetor.length; ++j)
+                if (vetor[j] < vetor[min])  min = j;
+            int x = vetor[i];
+            vetor[i] = vetor[min];
+            vetor[min] = x;
+        }
+    }
+    public void insertionsort ()
+    {
+       for (int j = 1; j < vetor.length; ++j) {
+          int x = vetor[j];
+          int i;
+          for (i = j-1; i >= 0 && vetor[i] > x; --i) 
+             vetor[i+1] = vetor[i];
+          vetor[i+1] = x;
+       }
     }
 }
 

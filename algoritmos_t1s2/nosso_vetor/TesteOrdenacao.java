@@ -1,6 +1,6 @@
-import java.util.Scanner;
-import java.util.Date;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
 
 public class TesteOrdenacao {
     public static void main(String[] args) {
@@ -19,7 +19,22 @@ public class TesteOrdenacao {
             long tempoDemora = fim.getTime() - ini.getTime();
             System.out.println("Tempo de demora: " + tempoDemora + " ms");
             // System.out.println("Vetor Ordenado: \n" + v);
-            System.out.println("Escolha um novo tamanho para o vetor, 0 encerra: ");
+            //System.out.println("Escolha um novo tamanho para o vetor, 0 encerra: ");
+
+            v.preencheVetor();
+            ini = Calendar.getInstance().getTime();
+            v.selectionsort();
+            fim = Calendar.getInstance().getTime();
+            tempoDemora = fim.getTime() - ini.getTime();
+            System.out.println("Tempo de demora: " + tempoDemora + " ms");
+            
+            v.preencheVetor();
+            ini = Calendar.getInstance().getTime();
+            v.insertionsort();
+            fim = Calendar.getInstance().getTime();
+            tempoDemora = fim.getTime() - ini.getTime();
+            System.out.println("Tempo de demora: " + tempoDemora + " ms");
+
             t = scanner.nextInt();
         }
         scanner.close();
