@@ -1,0 +1,22 @@
+EXERCÍCIOS:
+
+PLP-Lab-Lista 3
+
+1 -)
+#include <iostream>
+using namespace std;
+
+float vet1[10], vet2[10], vet3[10];
+
+int main(void) {
+    cout << "Digite 10 valores no vetor: \n";
+
+    for (int n = 0; n < 10; n++) {
+        cout << "Valor " << n << ": \n";
+        cin >> vet1[n];
+    }
+
+    cout << "Vetor 1: " << vet1;
+
+    return 0;
+}
