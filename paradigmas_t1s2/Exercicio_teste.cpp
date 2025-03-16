@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-using namespace std;
+using namespace std; //considera que todos os nomes na biblioteca std são válidos sem a necessidade de usar std:: antes de cada comando
 
 double vet1[10], vet2[10], vet3[10];
 double calculoMedia() {
@@ -11,11 +11,26 @@ double calculoMedia() {
     return soma / 10;
 }
 double calculoMediana() {
-    
+    sort(vet1, vet1 + 10);
     return (vet1[4] + vet1[5]) / 2;
 }
 double calculoModa() {
-    NULL;
+    int maxCount = 0;
+    double moda = vet1[0];
+
+    for(int i = 0; i < 10; i++) {
+        int count = 0;
+        for(int j = i + 1; j < 10; j++) {
+            if(vet1[i] == vet1[j]) {
+                count++;
+            }
+            if(count > maxCount) {
+                maxCount = count;
+                moda = vet1[i];
+            }
+        }
+    }
+    return moda;
 }
 
 int main(void) {

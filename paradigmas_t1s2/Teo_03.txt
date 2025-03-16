@@ -2,3 +2,21 @@ EXERCÍCIOS:
 
 PLT - TEORIA - LISTA 3
 
+1 -)
+Conceitos Importantes:
+- Conceito de "nomes";
+- Vinculação (de valores, de tipos e de armazenamento);
+- Escopo de Variáveis
+
+2 -) Variáveis globais são inicializadas no início da execução do programa e deixam de existir quando o programa é finalizado, estando acessíveis no código como um todo (em C, variáveis globais são definidas fora do método principal main(); em Python, variáveis globais são definidas no início do programa).
+Já as variáveis locais são executadas no bloco de código onde foram declaradas, e seu tempo de vida é dado de acordo com sua necessidade (em C e em Python, variáveis locais podem estar dentro de estruturas de repetição, como em "for(int i = 0 ...)", em que o inteiro "i" é local).
+
+3 -) O Escopo define onde e como uma variável pode ser acessada dentro do código (onde seu valor é encontrado).
+Escopo Estático: as variáveis declaradas nesse escopo são resolvidas diretamente no código fonte;
+Escopo Dinâmico: as variáveis declaradas nesse escopo são resolvidas por referência através da pilha de chamadas;
+
+4 -) O ambiente de referenciamento de uma sentença(instrução) define onde e como as variáveis são trabalhadas durante a execução do programa. O ambiente de referenciamento depende do escopo (estático e dinâmico), do contexto da variável e da pilha de chamadas;
+
+5 -) Apelidos(aliases) são nomes alternativos para acessar um valor, variável, função, módulo ou objeto, facilitando a escrita do código e evitando conflitos entre nomes
+
+6 -) Ao testar o Material Complementar foi possível observar o comportamento da linguagem C ao armazenar e liberar variáveis e o comportamento dos ponteiros nessa atividade;
