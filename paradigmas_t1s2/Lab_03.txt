@@ -58,3 +58,94 @@ int main(void) {
 }
 
 2 -)
+#include <iostream>
+#include <algorithm>
+using namespace std; //considera que todos os nomes na biblioteca std são válidos sem a necessidade de usar std:: antes de cada comando
+
+int saque;
+int para_entregar;
+int opcoes[4] = {200, 50, 5, 1};
+
+int main(void) {
+    
+    printf("CAIXA ELETRONICO\n\n");
+    printf("Digite o valor desejado\n");
+    scanf("%d", &saque);
+    
+    para_entregar = saque;
+    
+    for(int i = 0; i < 4; i++) {
+        int count = 0;
+        while (opcoes[i] <= saque){
+            count++;
+            saque -= opcoes[i];
+            para_entregar = saque;
+        }
+        printf("%i Nota de %i reais\n Resta entregar %i reais\n\n", count, opcoes[i], para_entregar);
+        // IDEIA QUE EU TIVE QUE FOI SUBSTITUÍDA PELO LOOP 'WHILE' ACIMA
+        // else{ 
+        //     i -= 1;
+        // }
+    }
+    cout << "Falta " << para_entregar << " para entregar\n" << endl;
+
+    return 0;
+}
+
+3 -)
+#include <iostream>
+#include <sstream>
+#include <vector>
+using namespace std; //considera que todos os nomes na biblioteca std são válidos sem a necessidade de usar std:: antes de cada comando
+
+class NomeCompleto {
+private:
+    string nomeCompleto;
+    string sobrenome;
+    vector<string> iniciais;
+
+public:
+    void lerNome() {
+        cout << "Digite o nome completo: ";
+        getline(cin, nomeCompleto);
+    }
+
+    void processarNome() {
+        stringstream ss(nomeCompleto);
+        string palavra;
+        vector<string> palavras;
+
+        // Divide o nome completo em palavras
+        while (ss >> palavra) {
+            palavras.push_back(palavra);
+        }
+
+        // O último elemento é o sobrenome
+        sobrenome = palavras.back();
+        palavras.pop_back();
+
+        // Os demais elementos são os nomes, dos quais extraímos as iniciais
+        for (const string& nome : palavras) {
+            iniciais.push_back(nome.substr(0, 1) + ".");
+        }
+    }
+
+    void imprimirResultado() {
+        cout << sobrenome << ", ";
+        for (const string& inicial : iniciais) {
+            cout << inicial << " ";
+        }
+        cout << endl;
+    }
+};
+
+int main(void) {
+    NomeCompleto nc;
+    nc.lerNome();
+    nc.processarNome();
+    nc.imprimirResultado();
+
+    return 0;
+}
+
+4 -)

@@ -1,53 +1,16 @@
 #include <iostream>
-#include <algorithm>
+#include <sstream>
+#include <vector>
 using namespace std; //considera que todos os nomes na biblioteca std são válidos sem a necessidade de usar std:: antes de cada comando
 
-double vet1[10], vet2[10], vet3[10];
-double calculoMedia() {
-    double soma = 0;
-    for (int n = 0; n < 10; n++) {
-        soma += vet1[n];
-    }
-    return soma / 10;
-}
-double calculoMediana() {
-    sort(vet1, vet1 + 10);
-    return (vet1[4] + vet1[5]) / 2;
-}
-double calculoModa() {
-    int maxCount = 0;
-    double moda = vet1[0];
+int main(void){
+    // Sequência de Fibonacci: Fn = Fn-1 + Fn-2
+    float valor_investido;
 
-    for(int i = 0; i < 10; i++) {
-        int count = 0;
-        for(int j = i + 1; j < 10; j++) {
-            if(vet1[i] == vet1[j]) {
-                count++;
-            }
-            if(count > maxCount) {
-                maxCount = count;
-                moda = vet1[i];
-            }
-        }
-    }
-    return moda;
-}
-
-int main(void) {
-    cout << "Digite 10 valores no vetor: \n";
-
-    for (int n = 0; n < 10; n++) {
-        cout << "Valor " << n << ": \n";
-        cin >> vet1[n];
-    }
-    printf("\nVetor 1: \n");
-    for (int n = 0; n < 10; n++) {
-        cout << vet1[n] << endl;
-    }
-    printf("\nMedidas de tendência central do Vetor 1: \n");
-    cout << "Média: " << calculoMedia() << endl;
-    cout << "Mediana: " << calculoMediana() << endl;
-    cout << "Moda: " << calculoModa() << endl;
+    cout << "MODELO DE PREVISÃO COM BASE NA SEQUÊNCIA FIBONACCI\n";
+    cout << "Digite o valor\n";
+    cin >> valor_investido;
+    cout << valor_investido;
 
     return 0;
 }
