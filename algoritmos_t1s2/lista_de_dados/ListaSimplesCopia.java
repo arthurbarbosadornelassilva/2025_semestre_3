@@ -1,28 +1,21 @@
-public class ListaSimples {
+public class ListaSimplesCopia {
     private No primeiro;
-    private No ultimo;
 
-    // CRIAÇÃO DE LISTA LIGADA:
-    // vamos usar o construtor padrão: primeiro e último = null
     public boolean estaVazia() {
         return primeiro == null;
     }
     public void insereInicio(int elemento) {
         No novo = new No(elemento);
-        if(estaVazia()) {
-            ultimo = novo;
+        if(!estaVazia()) {
+            novo.setProximo(primeiro);
         }
-        novo.setProximo(primeiro);
+        primeiro = novo;
     }
     public int removeInicio() {
         if(estaVazia())
             throw new RuntimeException("lista vazia, nao há o que remover!");
         int elemento = primeiro.getInfo();
         primeiro = primeiro.getProximo();
-        if (primeiro == null) {
-            ultimo = null;
-        }
-
         return elemento;
     }
     @Override
@@ -46,8 +39,12 @@ public class ListaSimples {
         if (estaVazia()) {
             primeiro  = novo;
         }
-        ultimo.setProximo(novo);
-        
-        ultimo = novo;
+        else {
+            No runner = primeiro;
+            while (runner.getProximo() != null) { // vai a´te o último elemento da lista
+                runner = runner.getProximo();
+            }
+            runner.setProximo(novo);
+        }
     }
 }
