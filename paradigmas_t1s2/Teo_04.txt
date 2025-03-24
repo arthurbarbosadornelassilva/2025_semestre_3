@@ -3,5 +3,36 @@ EXERCÍCIOS:
 PLT - TEORIA - LISTA 4
 
 1 -)
+Tipos de Dados: coleção de valores de dados e operações pré-definidas com dados
+
+    - Tipos Primitivos (dados não definidos em termo de outros):
+        - Numéricos: usados para armazenar e representar valores numéricos;
+        - Caracteres: usados para representar sequências de caracteres;
+        - Booleanos: tipo de dado mais simples, que representa elementos verdadeiros ou falsos;
 
 2 -)
+O padrão IEEE 754 é uma norma técnica estabelecida pelo IEEE, que define um formato para a representação de números de ponto flutuante em sistemas de computação, sendo fundamental para garantir a consistência e a portabilidade de cálculos numéricos em diversas plataformas e linguagens de programação.
+Os principais aspectos do padrão IEEE 754 são: representação de ponto flutuante, formatos definidos, números especiais e arredondamento
+
+3 -)
+O tipo decimal em C# é usado para representar números decimais, assim como double ou float. Porém a vantagem de usar o decimal é que ele funciona na base 10, o que faz com que sua precisão para números expressáveis na base 10 seja maior em comparação com os outros
+
+4 -)
+Float: O tipo de dado float é de precisão simples de 32 bits IEEE 754 ponto fluante
+
+Double: O tipo de dado double é de dupla precisão de 64 bits IEEE 754 ponto flutuante
+
+5 -)
+O padrão UNICODE se trata de um padrão universal e consistente de condificação de caracteres gravados e texto, especidicando um valor e um nome para cada caractere.
+Esse padrão define 3 formas de codificação, que permite armazenamento e transmissão em formato orientado por byte, ou seja, 8, 16 ou 32 bits por unidade de código.
+
+Já tabela ASCII também se trata de um parão de codificação universal e consistente, mas sua especificação de caractere está na faixa de 0 a 127, incluindo letras, números, sinais de pontuação e alguns caracteres especiais (apenas 8 bits por unidade de código).
+
+6 -)
+Uma lista em Java é uma estrutura de dados que armazena elementos de forma ordenada e sequencial. Ao contrário dos arrays, as listas são dinâmicas, permitindo a adição e remoção de elementos sem a necessidade de definir um tamanho fixo. Os mais conhecidos tipos de listas em Java são a ArrayList e a LinkedList.
+
+7 -)
+União é um tipo especial de estrutura capaz de armazenar um único membro por vez, ao contrário da estrutura normal, os membros de uma união não ocupam posições consecutivas. Todos eles são armazenados a partir do mesmo endereço de memória e, por esse motivo, apenas um deles pode existir em um dado momento.
+
+8 -)
+A configuração especial de bits no padrão IEEE 754, pois como alguns resultados de operações aritméticas não são suportadas pela máquina, estas operações são representadas de forma especial;

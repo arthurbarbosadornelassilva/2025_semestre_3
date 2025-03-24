@@ -1,16 +1,12 @@
 #include <iostream>
-#include <sstream>
-#include <vector>
-using namespace std; //considera que todos os nomes na biblioteca std são válidos sem a necessidade de usar std:: antes de cada comando
+// using namespace std;
 
-int main(void){
-    // Sequência de Fibonacci: Fn = Fn-1 + Fn-2
-    float valor_investido;
+int main(void) {
+    char letra = 'A';
+    char *ptr = &letra;
 
-    cout << "MODELO DE PREVISÃO COM BASE NA SEQUÊNCIA FIBONACCI\n";
-    cout << "Digite o valor\n";
-    cin >> valor_investido;
-    cout << valor_investido;
+    std:: cout << letra << "\n";
+    std:: cout << ptr << "\n";
 
     return 0;
 }
