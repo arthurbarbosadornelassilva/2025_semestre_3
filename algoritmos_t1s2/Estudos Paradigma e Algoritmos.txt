@@ -1,0 +1,17 @@
+C++
+https://www.youtube.com/watch?v=-TkoO8Z07hI C++
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Java
+https://www.ime.usp.br/~pf/algoritmos/ Projeto de Algoritmos (em C)
+https://www.ime.usp.br/~pf/algoritmos/aulas/array.html Vetores
+https://www.ime.usp.br/~pf/algoritmos/aulas/ordena.html#insertion Ordenação: algoritmos elementares
+https://www.ime.usp.br/~pf/algoritmos/aulas/lista.html Listas encadeadas
+
+------------------------------------------------------------------------------------------------------------------------------------------
+C
+https://www.youtube.com/watch?v=87SH2Cn0s9A&t=6615s C 
+https://www.ime.usp.br/~pf/algoritmos/aulas/pont.html Endereços e ponteiros
+https://www.ime.usp.br/~pf/algoritmos/aulas/stru.html Registros e structs
+https://www.ime.usp.br/~pf/algoritmos/aulas/aloca.html Alocação dinâmica de memória
+https://programacaodescomplicada.wordpress.com/indice/estrutura-de-dados/ Estrutura de Dados

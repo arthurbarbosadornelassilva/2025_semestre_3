@@ -1,0 +1,59 @@
+CONTEÚDO DE TEORIA PARA A PROVA - PARADIGMAS & LPs:
+
+
+Aula 1:
+- Grandes Domínios de Programação
+	*EM GERAL, RESUME ONDE A PROGRAMAÇÃO PODE SER APLICADA (ex.: ciências, engenharia, mídia, IA, etc)
+- Critérios para Avaliação das Linguagens de Programação
+	- legibilidade
+	- facilidade de escrita
+	- confiabilidade
+	- portabilidade
+	- custo
+- Linguagens Compiladas & Interpretadas
+	- Compiladores (tradução do programa para binário em tempo de compilação)
+	- Interpretadores (tradução do programa em tempo de execução, linha por linha)
+- Arquitetura de Computadores
+	- Lógica da máquina define a lógica da linguagem
+	- Arquitetura de Von Neumann (utilizada nos computadores atuais)
+
+Aula 2:
+- Classificação das Linguagens de Programação
+	- Níveis de Abstração (alto, médio & baixo nível)
+- Paradigmas Imperativo & Declarativo
+	- Imperativo: descreve "como" o programa deve executar algo. Instruções dadas a partir da mudança de estados da memória
+	- Declarativo: descreve "o quê" o programa deve o executar. Instruções dadas a partir de funções & lógica matemática
+- Linguagens Estruturadas & Orientadas a Objetos
+- Linguagens Funcionais & Lógicas
+
+Aula 3:
+- Nomes
+- Variáveis & Constantes
+- Vinculação
+	- Atribuição de valor/tipo/parâmetro/etc a um nome
+- Vinculação de Tipos & Armazenamento
+- Categorias de Variáveis baseado no tempo de vida
+	- Variáveis Estáticas
+		- Dinâmicas de Pilha
+	- Variáveis Dinâmicas
+		- Dinâmicas de Monte Explícitas
+		- Dinâmicas de Monte Implícitas
+
+Aula 4:
+- Tipos de Dados:
+	- Conjunto de dados e operações sobre esses dados (cada tipo tem características e operações diferentes)
+	- Tipos Primitivos: tipos não definidos em termo de outros tipos
+- Matrizes & Vetores
+- Matrizes Associativas
+- Ponteiros
+- Registros, Tuplas & Listas
+
+Aula 5:
+- Expressões Aritméticas (operadores)
+- Ordem de Avaliação de Operandos
+- Sobrecarga de Operadores
+- Conversão de Tipos
+- Avaliação em Curto-Circuito
+
+Aula 6:
+	EM BREVE

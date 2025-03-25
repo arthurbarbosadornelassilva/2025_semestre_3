@@ -1,0 +1,8 @@
+Comandos para inicializar um novo template com as dependências necessárias usando o Expo:
+
+1 -)
+npx create-expo-app@latest <nome> //inicializa um novo projeto
+
+npm run reset-project //apaga o app exemplo instalado, mas mantém as dependências e pastas
+
+npx expo start //inicia o servidor
