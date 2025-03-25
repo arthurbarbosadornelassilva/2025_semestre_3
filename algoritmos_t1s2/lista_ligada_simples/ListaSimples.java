@@ -50,4 +50,23 @@ public class ListaSimples {
         
         ultimo = novo;
     }
+    public int removeFim() {
+        if (estaVazia()){
+            throw new RuntimeException("Lista vazia, não há o quê remover");
+        }
+        int elemento = ultimo.getInfo();
+        if (primeiro == ultimo) {
+            primeiro = null;
+            ultimo = null;
+        }
+        else {
+            No runner = primeiro;
+            while (runner.getProximo() != ultimo) {
+                runner = runner.getProximo();
+            }
+            runner.setProximo(null);
+            ultimo = runner;
+        }
+        return elemento;
+    }
 }

@@ -1,0 +1,24 @@
+EXERCÍCIOS:
+
+PLT - TEORIA - LISTA 5
+
+1 -)
+
+2 -)
+Expressões Infixas:
+    São operações onde o operador é posicionado entre os operandos (exemplos: A+B, B+C*D)
+
+Expressões Prefixas:
+    São operações onde o operador é posicionado antes dos operandos (exemplos: +AB, +BC*D)
+
+Expressões Posfixas:
+    São operações onde o operador é posicionado depois dos operandos (exemplos: AB+, BC+D*)
+
+3 -)
+Transparência Referencial:
+
+Efeitos Colaterais:
+
+4 -)
+Sobrecarga de Operadores:
+
