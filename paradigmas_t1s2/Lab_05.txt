@@ -1,0 +1,44 @@
+Avaliação de Modelos de Classificação:
+
+1 - Algoritmo de Classificação:
+Método utilizado para categorizar dados em diferentes classes ou categorias (usado em machine learning).
+Uma variável alvo em IA, também conhecida como variável de resposta ou variável dependente
+(em inglês, target variable), é a variável que um modelo de aprendizado de máquina ou
+inteligência artificial tenta prever ou explicar.
+Por exemplo, se estivermos construindo um modelo para prever o preço de uma casa com base
+em várias características, como tamanho, número de quartos, localização, etc., então o preço
+da casa seria a variável alvo. O modelo tentaria aprender uma relação entre as características
+fornecidas e o preço da casa, de modo que, dadas as características de uma nova casa, ele possa
+fazer uma previsão precisa do preço.
+
+2 - Árvore de Decisão:
+São métodos de aprendizado de máquina supervisionados, muito utilizados
+em tarefas de classificação.
+O primeiro passo é importar as bibliotecas necessárias. A scikit-learn é uma biblioteca de
+aprendizado de máquina de código aberto para a linguagem de programação Python. Ela inclui
+vários algoritmos de classificação, regressão e agrupamento e é projetada para interagir com as
+bibliotecas Python numéricas e científicas NumPy e SciPy.
+
+3 - KNN (K - Nearest Neighbors):
+um algoritmo que pode ser utilizado tanto para
+problemas de classificação quanto para problemas de regressão, onde o aprendizado é baseado
+“no quão similar” é um dado de outro.
+Como dado, considera-se um vetor formado por todas
+as variáveis preditoras, representando uma linha da tabela. O KNN executa um cálculo matemático para medir a distância entre os dados para fazer sua
+classificação. Por exemplo: Euclidiana, Manhattan, Minkowski, Ponderada e etc
+
+METODOLOGIA da técnica KNN:
+1. Recebe um dado não classificado;
+2. Calcula a distância do novo dado com todos os outros dados que já estão classificados;
+3. Obtém as K menores distâncias (essa é a variável que dá nome ao método KNN);
+4. Verifica a classe de cada um dos K dados que tiveram a menor distância e conta a
+quantidade de cada classe que aparece;
+5. Atribui a classe que mais aparece como a classificação do dado não classificado.
+
+LINK DO ARQUIVO DO COLAB COM OS TESTES DOS MODELOS EM PYTHON: https://colab.research.google.com/drive/1iWXYDLsV6k76t0Y3l2wbIDuzgZreAE_1
+
+EXERCÍCIOS:
+
+PLP-Lab-Lista 5
+
+1 -)

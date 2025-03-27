@@ -16,9 +16,18 @@ Expressões Posfixas:
 
 3 -)
 Transparência Referencial:
+    Conceito fundamental na programação funcional, que define que uma expressão pode ser substituída pelo seu valor correspondente sem alterar o comportamento do programa.
+    Em outras palavras, se uma função sempre retorna o mesmo resultado para as mesmas entradas e não possui efeitos colaterais (como modificar variáveis globais ou realizar operações de E/S), ela é considerada referencialmente transparente
 
 Efeitos Colaterais:
+    Efeitos colaterais na ordem de operadores referem-se às situações em que a ordem de avaliação de uma expressão afeta o resultado final. Esses efeitos colaterais ocorrem quando a função modifica um de seus parâmetros ou uma variável global.
+    A ordem de avaliação dos operadores pode variar, e a falta de clareza ou dependência excessiva dessa ordem pode tornar o código difícil de entender e propenso a erros
 
 4 -)
 Sobrecarga de Operadores:
-
+    A sobrecarga de operadores permite redefinir ou estender o comportamento de operadores padrão para trablahar com tipos de dados definidos pelo usuário (classes/objetos definidos pelo usuário).
+    A redefinição dos operadores, trabalhada nas funções dentro de classes criadas pelo usuário, mudam o comportamento desses operadores, que passam a funcionar de forma 'sobrecarregada'.
+    Vantagens:
+        - código mais legível
+        - intuitividade
+        - reutilização de código

@@ -3,10 +3,149 @@ EXERCÍCIOS:
 PLP-Lab-Lista 4
 
 1 -)
+import pandas as pd
+import matplotlib as plt
+
+# a)
+print('Exercício A')
+dados = {'Área de Negócio':['Segurança', 'Financeiro', 'Transporte', 'Tecnologia', 'Marketing'],
+        'Filial A':[7.8, 6.7, 2.8, 5.6, 8.3],
+        'Filial B':[6.2, 4.1, 9.2, 4.5, 7.5],
+        'Filial C':[9.8, 7.3, 3.4, 7.2, 9.1]}
+
+dataframe = pd.DataFrame(dados)
+print(dataframe)
+
+print('*'*50)
+
+print('Exercício B')
+# b)1)
+'''
+dataframe.iloc[:, 1:]: Seleciona todas as linhas (:) e todas as colunas a partir da segunda (1:), ou seja, pega só as colunas das filiais (ignorando "Área de Negócio").
+
+.iloc[] → É usado para acessar elementos de um DataFrame com índices numéricos (como se fosse uma matriz)
+
+.mean(axis=1): Calcula a média linha por linha (axis=1 significa "por linha" em vez de "por coluna").
+'''
+dataframe["Media Desempenho"] = dataframe.iloc[:, 1:].mean(axis=1)
+print(dataframe)
+
+print('*'*50)
+
+# b)2)
+
+dataframe["Melhor Desempenho"] = dataframe.iloc[:, 1:].idxmax(axis=1)
+print(dataframe)
+
+print('*'*50)
+
+# b)3)
+
+# Certificando-se de que está pegando apenas colunas numéricas (Filial A, B e C)
+dataframe["Total Desempenho"] = dataframe.iloc[:, 1:4].sum(axis=1)
+print(dataframe)
+
+print('*'*50)
+
+# c)
+
+print('Exercício C')
+# Exportar o DataFrame para um arquivo CSV
+dataframe.to_csv('desempenho_filiais.csv', index=False)
+
+# Fazendo a leitura do arquivo
+novo_dataframe = pd.read_csv('Lista_4/desempenho_filiais.csv')
+
+print(novo_dataframe)
+
 
 2 -)
+# a)
+import pandas as pd
+from google.colab import files
+import matplotlib.pyplot as plt
+
+uploaded = files.upload()
+
+
+caminho_arquivo = list(uploaded.keys())[0]
+
+
+dados = pd.read_excel(caminho_arquivo, sheet_name="Pedidos de Asilo")
+
+dados['Número de Pedidos'] = pd.to_numeric(dados['Número de Pedidos'], errors='coerce')
+
+
+print("Dimensões do DataFrame:", dados.shape)
+print("Linhas iniciais do DataFrame:")
+print(dados.head(10))
+
+# b)
+plt.figure(figsize=(10, 6))
+plt.hist(
+    dados["Número de Pedidos"].dropna(),
+    bins=100,
+    range=(0, 100),
+    color="#003b64",
+    edgecolor="black",
+    alpha=0.7
+)
+
+
+plt.title("Distribuição do Número de Pedidos de Asilo")
+plt.xlabel("Número de Pedidos")
+plt.ylabel("Frequência")
+plt.grid(True)
+plt.xlim(0, 100)
+
+
+plt.show()
+
+# c)
+plt.figure(figsize=(12, 6))
+plt.scatter(
+    dados["Ano"],
+    dados["Número de Pedidos"],
+    color="#003b64",
+    alpha=0.5,
+    s=10,
+)
+
+
+plt.title("Número de Pedidos de Asilo ao Longo dos Anos")
+plt.xlabel("Ano")
+plt.ylabel("Número de Pedidos")
+plt.grid(True)
+
+
+plt.show()
+
 
 3 -)
+import pandas as pd
+
+estoque = [
+    {"nome": "Camiseta", "quantidade": 10, "minimo": 15},
+    {"nome": "Calça de Moletom", "quantidade": 25, "minimo": 15},
+    {"nome": "Calça Jeans", "quantidade": 8, "minimo": 10},
+    {"nome": "Casaco de Lã", "quantidade": 30, "minimo": 15},
+    {"nome": "Gorro", "quantidade": 10, "minimo": 10}
+]
+
+def produtos_abaixo_minimo(estoque):
+    lista_abaixo_minimo = []
+    df = pd.DataFrame({"nome": [], "quantidade": [], "minimo": []})
+    for i in estoque:
+        df.loc[len(df)] = [i["nome"], i["quantidade"], i["minimo"]]
+
+    item_abaixo_minimo = df[["nome"]].loc[df["quantidade"] < df["minimo"]].reset_index()
+    for i in range(len(item_abaixo_minimo)):
+        lista_abaixo_minimo.append(item_abaixo_minimo.loc[i, "nome"])
+
+    return lista_abaixo_minimo
+
+lista_resultado = produtos_abaixo_minimo(estoque)
+print(lista_resultado)
 
 4 -)
 notas_alunos = [(7.8, 3), (9.0, 2), (9.8, 3), (5.0, 2), (4.2, 3), (10.0, 2)]
