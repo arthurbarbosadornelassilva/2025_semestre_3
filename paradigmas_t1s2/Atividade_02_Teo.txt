@@ -1,0 +1,49 @@
+**ATIVIDADE 02 - Teoria**
+
+**CONSIDERE AS RESPOSTAS DOS EXERCÍCIOS 1 DE CADA LISTA FORAM UTILIZADAS NOS DIAGRAMAS, ESQUEMAS OU DESENHOS DAS LISTAS**
+
+
+EXERCÍCIOS DA LISTA 3
+
+- 1)
+Conceitos Importantes:
+- Conceito de "nomes";
+- Vinculação (de valores, de tipos e de armazenamento);
+- Escopo de Variáveis
+
+- 3) O Escopo define onde e como uma variável pode ser acessada dentro do código (onde seu valor é encontrado).
+Escopo Estático: as variáveis declaradas nesse escopo são resolvidas diretamente no código fonte;
+Escopo Dinâmico: as variáveis declaradas nesse escopo são resolvidas por referência através da pilha de chamadas;
+
+- 4) O ambiente de referenciamento de uma sentença(instrução) define onde e como as variáveis são trabalhadas durante a execução do programa. O ambiente de referenciamento depende do escopo (estático e dinâmico), do contexto da variável e da pilha de chamadas;
+
+EXERCÍCIOS DA LISTA 4:
+
+- 1)
+Tipos de Dados: coleção de valores de dados e operações pré-definidas com dados
+
+    - Tipos Primitivos (dados não definidos em termo de outros):
+        - Numéricos: usados para armazenar e representar valores numéricos;
+        - Caracteres: usados para representar sequências de caracteres;
+        - Booleanos: tipo de dado mais simples, que representa elementos verdadeiros ou falsos;
+
+- 3)
+O tipo decimal em C# é usado para representar números decimais, assim como double ou float. Porém a vantagem de usar o decimal é que ele funciona na base 10, o que faz com que sua precisão para números expressáveis na base 10 seja maior em comparação com os outros
+
+ EXERCÍCIOS DA LISTA 5:
+
+- 1)
+Conceitos Importantes (Capítulo 7 - Conceitos de Linguagens de Programação):
+    - Operadores e Operandos (saber diferenciar os dois conceitos e apontar quais os tipos de operadores);
+    - Ordem de Avaliação dos Operadores (para entender como uma linguagem trabalha a precedência de operadores e regras de associatividade);
+    - Ordem de Avaliação dos Operandos (para entender como ocorrem efeitos colaterais oo transparência referencial em em um programa);
+    - Operadores Sobrecarregados (para entender o comportamento de operadores ao trabalhar com tipos não primitivos);
+
+- 4)
+Sobrecarga de Operadores:
+    A sobrecarga de operadores permite redefinir ou estender o comportamento de operadores padrão para trablahar com tipos de dados definidos pelo usuário (classes/objetos definidos pelo usuário).
+    A redefinição dos operadores, trabalhada nas funções dentro de classes criadas pelo usuário, mudam o comportamento desses operadores, que passam a funcionar de forma 'sobrecarregada'.
+    Vantagens:
+        - código mais legível
+        - intuitividade
+        - reutilização de código

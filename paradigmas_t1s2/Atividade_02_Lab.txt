@@ -1,65 +1,104 @@
-EXERCÍCIOS:
+**ATIVIDADE 02 - Laboratório**
 
-PLP-Lab-Lista 4
-
-1 -)
-import pandas as pd
-import matplotlib as plt
-
-# a)
-print('Exercício A')
-dados = {'Área de Negócio':['Segurança', 'Financeiro', 'Transporte', 'Tecnologia', 'Marketing'],
-        'Filial A':[7.8, 6.7, 2.8, 5.6, 8.3],
-        'Filial B':[6.2, 4.1, 9.2, 4.5, 7.5],
-        'Filial C':[9.8, 7.3, 3.4, 7.2, 9.1]}
-
-dataframe = pd.DataFrame(dados)
-print(dataframe)
-
-print('*'*50)
-
-print('Exercício B')
-# b)1)
-'''
-dataframe.iloc[:, 1:]: Seleciona todas as linhas (:) e todas as colunas a partir da segunda (1:), ou seja, pega só as colunas das filiais (ignorando "Área de Negócio").
-
-.iloc[] → É usado para acessar elementos de um DataFrame com índices numéricos (como se fosse uma matriz)
-
-.mean(axis=1): Calcula a média linha por linha (axis=1 significa "por linha" em vez de "por coluna").
-'''
-dataframe["Media Desempenho"] = dataframe.iloc[:, 1:].mean(axis=1)
-print(dataframe)
-
-print('*'*50)
-
-# b)2)
-
-dataframe["Melhor Desempenho"] = dataframe.iloc[:, 1:].idxmax(axis=1)
-print(dataframe)
-
-print('*'*50)
-
-# b)3)
-
-# Certificando-se de que está pegando apenas colunas numéricas (Filial A, B e C)
-dataframe["Total Desempenho"] = dataframe.iloc[:, 1:4].sum(axis=1)
-print(dataframe)
-
-print('*'*50)
-
-# c)
-
-print('Exercício C')
-# Exportar o DataFrame para um arquivo CSV
-dataframe.to_csv('desempenho_filiais.csv', index=False)
-
-# Fazendo a leitura do arquivo
-novo_dataframe = pd.read_csv('Lista_4/desempenho_filiais.csv')
-
-print(novo_dataframe)
+**ALGUNS DESSES EXERCÍCIOS FORAM FEITOS JUNTAMENTE DO GRUPO DO PI E, PORTANTO, PODEM SER SEMELHANTES**
 
 
-2 -)
+EXERCÍCIOS DA LISTA 3
+
+- 2)
+#include <iostream>
+#include <algorithm>
+using namespace std; //considera que todos os nomes na biblioteca std são válidos sem a necessidade de usar std:: antes de cada comando
+
+int saque;
+int para_entregar;
+int opcoes[4] = {200, 50, 5, 1};
+
+int main(void) {
+    
+    printf("CAIXA ELETRONICO\n\n");
+    printf("Digite o valor desejado\n");
+    scanf("%d", &saque);
+    
+    para_entregar = saque;
+    
+    for(int i = 0; i < 4; i++) {
+        int count = 0;
+        while (opcoes[i] <= saque){
+            count++;
+            saque -= opcoes[i];
+            para_entregar = saque;
+        }
+        printf("%i Nota de %i reais\n Resta entregar %i reais\n\n", count, opcoes[i], para_entregar);
+        // IDEIA QUE EU TIVE QUE FOI SUBSTITUÍDA PELO LOOP 'WHILE' ACIMA
+        // else{ 
+        //     i -= 1;
+        // }
+    }
+    cout << "Falta " << para_entregar << " para entregar\n" << endl;
+
+    return 0;
+}
+
+- 3)
+#include <iostream>
+#include <sstream>
+#include <vector>
+using namespace std; //considera que todos os nomes na biblioteca std são válidos sem a necessidade de usar std:: antes de cada comando
+
+class NomeCompleto {
+private:
+    string nomeCompleto;
+    string sobrenome;
+    vector<string> iniciais;
+
+public:
+    void lerNome() {
+        cout << "Digite o nome completo: ";
+        getline(cin, nomeCompleto);
+    }
+
+    void processarNome() {
+        stringstream ss(nomeCompleto);
+        string palavra;
+        vector<string> palavras;
+
+        // Divide o nome completo em palavras
+        while (ss >> palavra) {
+            palavras.push_back(palavra);
+        }
+
+        // O último elemento é o sobrenome
+        sobrenome = palavras.back();
+        palavras.pop_back();
+
+        // Os demais elementos são os nomes, dos quais extraímos as iniciais
+        for (const string& nome : palavras) {
+            iniciais.push_back(nome.substr(0, 1) + ".");
+        }
+    }
+
+    void imprimirResultado() {
+        cout << sobrenome << ", ";
+        for (const string& inicial : iniciais) {
+            cout << inicial << " ";
+        }
+        cout << endl;
+    }
+};
+
+int main(void) {
+    NomeCompleto nc;
+    nc.lerNome();
+    nc.processarNome();
+    nc.imprimirResultado();
+
+    return 0;
+}
+
+EXERCÍCIOS DA LISTA 4:
+
+- 2)
 # a)
 import pandas as pd
 from google.colab import files
@@ -120,8 +159,7 @@ plt.grid(True)
 
 plt.show()
 
-
-3 -)
+- 3)
 import pandas as pd
 
 estoque = [
@@ -147,27 +185,7 @@ def produtos_abaixo_minimo(estoque):
 lista_resultado = produtos_abaixo_minimo(estoque)
 print(lista_resultado)
 
-4 -)
-notas_alunos = [(7.8, 3), (9.0, 2), (9.8, 3), (5.0, 2), (4.2, 3), (10.0, 2)]
-
-def media_ponderada(notas_pesos):
-    print(f"Notas: {notas_pesos}\n")
-
-    tamanho = len(notas_pesos)
-    dividendo = 0
-    divisor = 0
-
-    for i in range(tamanho):
-        dividendo += (notas_pesos[i][0] * notas_pesos[i][1])
-        divisor += notas_pesos[i][1]
-
-    media_pon = dividendo/ divisor
-    print(f"Média Ponderada: \n{media_pon}")
-    return media_pon
-
-media_ponderada(notas_alunos)
-
-5 -)
+- 5)
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -220,4 +238,8 @@ for i in range(1, len(matriz)):
         dp[i][j] = matriz[i][j] + min(dp[i-1][j], dp[i][j-1])
 visualizar_caminho(matriz, dp)
 
-6 -)
+ EXERCÍCIOS DA LISTA 5:
+
+- 1)
+
+- 2)
