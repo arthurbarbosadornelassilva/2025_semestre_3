@@ -241,5 +241,45 @@ visualizar_caminho(matriz, dp)
  EXERCÍCIOS DA LISTA 5:
 
 - 1)
+import numpy as np
+import pandas as pd
+
+from sklearn.datasets import load_wine
+from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import train_test_split
+
+vinhos = load_wine()
+x = pd.DataFrame(vinhos.data, columns=vinhos.feature_names) #carrega o dataframe com as características (eixo x)
+print(x.shape)
+print(x.head())
+
+y = pd.DataFrame(vinhos.target, columns=['target']) #carrega a variável alvo
+print(y.head())
+
+#Treina o modelo de Árvore de Decisão
+tree_model = DecisionTreeClassifier(random_state=42)
+tree_model.fit(x_train, y_train)
+
+y_pred = tree_model.predict(x_test) #Realiza previsões
+
+print("\nMatriz de Confusão - Método da Árvore de Decisão:")
+print(confusion_matrix(y_test, y_pred))
+
+print("\nRelatório de Classificação:")
+print(classification_report(y_test, y_pred))
+
+#Treina o modelo KNN
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
+knn = KNeighborsClassifier(n_neighbors=5)
+knn.fit(x_train, y_train.values.ravel())
+
+y_pred = knn.predict(x_test) #Realiza previsões
+
+print("\nMatriz de Confusão - Método KNN:")
+print(confusion_matrix(y_test, y_pred))
+
+print("\nRelatório de Classificação:")
+print(classification_report(y_test, y_pred))
 
 - 2)
