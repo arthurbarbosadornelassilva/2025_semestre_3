@@ -283,3 +283,26 @@ print("\nRelatório de Classificação:")
 print(classification_report(y_test, y_pred))
 
 - 2)
+ #Avaliação de um Modelo de Classificação
+
+mc = [[50, 20],[10, 120]] #matriz de confusão
+print(mc)
+
+def rel_class():  #relatório de classificação
+  #Cálculo da Acurácia do Modelo
+  acuracia = (mc[0][0] + mc[1][1]) / (mc[0][0] + mc[0][1] + mc[1][0] + mc[1][1])
+  print("Acuracia: ", acuracia)
+
+  #Cálculo da Precisão para Casos Positivos
+  precisao = mc[0][0] / (mc[0][0] + mc[1][0])
+  print(f"Precisão: {precisao:,.4f}")
+
+  #Cálculo do Recall para Casos Positivos
+  recall = mc[0][0] / (mc[0][0] + mc[0][1])
+  print(f"Recall: {recall:,.4f}")
+
+  #Cálculo do F1-Score
+  f1_score = 2 * ((precisao * recall) / (precisao + recall))
+  print(f"F1-Score: {f1_score:,.4f}")
+
+rel_class()
