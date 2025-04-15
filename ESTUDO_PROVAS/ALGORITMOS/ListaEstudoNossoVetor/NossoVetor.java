@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class NossoVetor {
 
@@ -22,6 +20,10 @@ public class NossoVetor {
         if (estaCheio()) {
             System.out.println("Vetor cheio!");
         }
+        // Random random = new Random();
+        // for (int j = 0; j < vetorInt.length; j++) {
+        //     vetorInt[j] = random.nextInt(vetorInt.length * 1);
+        // }
         this.vetorInt[i] = elemento;
         ocupacoes++;
     }
@@ -40,8 +42,18 @@ public class NossoVetor {
     }
     
     // 2. Verificar quantas vezes um elemento aparece no vetor
-    
+    public int buscaLinear(int x) {
+        int contador = 0;
 
+        for(int i = 0; i < vetorInt.length; i++){
+            if (vetorInt[i] == x) {
+                contador++;
+            }
+        }
+        System.out.println("Numero de repetições: ");
+        return contador;
+    }
+    
     // 3. Remover um elemento de uma determinada posição
 
     // 4. Remover a primeira ocorrência de um determinado elemento

@@ -1,0 +1,166 @@
+REVISÃO PARADIGMAS:
+
+- Como Avaliar uma Linguagem?
+	- Legibilidade
+		- Simplicidade (ler a mesma coisa de formas diferentes)
+		- Ortogonalidade (capacidade de elementos primitivos poderem se combinar de várias formas)
+		- Identificação de tipos de Dados (capacidade para identificar tipos diversos)
+		- Sintaxe (forma como uma linguagem estrutura os elementos)
+	- Facilidade de Escrita
+		- Simplicidade (escrever a mesma coisa de formas diferentes)
+		- Ortogonalidade
+		- Expressividade (capacidade de expressar o código de forma comprimida)
+	- Confiabilidade
+		- Verificação de Tipos (compilador testa as variáveis, verificando seus tipo)
+		- Tratamento de Exceções (try/ catch & suporte para captura de exceções)
+		- Apelidos (permite dar nomes customizados a elementos da linguagem)
+	- Custo
+		- Treinamentos para uma equipe
+		- Tempo de Produção
+		- Tempo de Compilação e Execução
+		- Implementação
+		- Manutenção
+	- Portabilidade
+		- Suporte para linguagem em diversos sistemas
+		- Suporte Nativo
+
+- Graus de Abstração de uma Linguagem:
+	- Alto Nível (Java, Python, JS, TS, Rust, R, etc): linguagens de maior abstração, próximas ao programador;
+	- Médio Nível (C/ C++): próximas ao programador e à máquina também (possível mexer com a memória);
+	- Baixo Nível (Assembly & Binário): voltadas ao hardware da máquina e suas operações, com pouca ou nenhuma abstração;
+
+
+** O QUÊ É UM PARADIGMA DE LINGUAGEM DE PROGRAMAÇÃO? **
+	É o conjunto de características que definem como uma linguagem de programação opera e resolve problemas
+
+
+- Tipos de Paradigmas:
+	- Imperativo (instrui COMO um programa deve executar tarefas. Programa se desenvolve a partir de mudanças de estados da memória)
+		- Paradigma Estruturado (blocos lógicos, condições e repetições)
+		- Paradigma Procedural (modularização, com funções e métodos)
+		- Paradigma Orientado a Objetos (encapsulamento em classes e objetos)
+	- Declarativo (instrui O QUÊ o programa deve fazer para concluir uma tarefa. Programa se desenvolve a partir de instruções que definem a sequência lógica e resultado esperado, sem mudança de estados)
+		- Paradigma Funcional (funções matemáticas e recursividade nas instruções)
+		- Paradigma Lógio (lógica matemática nas instruções)
+
+- Diferenças entre Linguagens Compiladas & Interpretadas:
+	-  Linguagens Compiladas
+		- Faz o uso de um compilador
+		- O programa é lido por inteiro e traduzido para uma linguagem de máquina
+		- O compilador é capaz de identificar erros no programa e apontá-los antes de execução
+		- A execução é rápida e eficaz
+	- Linguagens Interpretadas
+		- Faz o uso de um interpretador
+		-  O programa é executado e lido linha a linha. Isso significa que não tradução prévia para linguagem de máquina
+		- Sucetível a erros em tempo de execução, mas é mais flexível e facilita a depuração
+
+- Nomes, Vinculação e Escopo:
+	- Nomes: usados para identificar variáveis, funções, classes, módulos, rótudos e outros elementos de uma linguagem de programação
+		- Palavras Reservadas: nomes especiais padrão, não definidos pelo usuário, que definem a sintaxe dos elementos daquela linguagem
+		- Palavras-chave: nomes especiais em alguns contextos (menos especiais que palavras reservadas)
+
+	- Variáveis: são espaços na memória (abstrações das células de memória) onde são armazenados dados e funções do código
+		Toda variável tem:
+		- Nome
+		- Endereço na memória (l-value)
+		- Valor (r-value)
+		- Tipo (com checagem de tipo & coerção a depender da linguagem)
+		- Tempo de Vida
+		- Escopo (onde uma variável pode ser acessada no código)
+			- Escopo local (variáveis dinâmicas)
+			- Escopo de classe/global (variáveis estáticas ou dinâmicas)
+
+	- Vinculação: atribuição de valor a um nome ou variável na memória
+		- Estática: conhecida como ligação em tempo de compilação, ela resolve esses vínculos antes do programa começar a executar
+		- Dinâmica: conhecida como ligação em tempo de execução, ela resolve esses vínculos a medida que eles vão aparecendo no meio da execução
+
+		- Vinculação de Tipos:
+			- Vinculação de Tipos Estática: é preciso informar explicitamente o tipo do dado, definido em tempo de compilação
+			- Vinculação  de Tipos Dinâmica: o programa observa o tipo de cada dado, definindo-o em tempo de execução
+			
+			- Declaração de tipos implícita e explícita: ato de informar o tipo de um dado
+				- Implícita: a linguagem usa mecanismos para inferir o tipo de uma variável de acordo com seu valor;
+				- Explícita: o programador é quem define de forma explícita o tipo da variável criada;
+
+		- Vinculação de Armazenamento: define em qual momento do programa uma memória é alocada
+			- Vinculação de Variáveis Estáticas: tipadas em tempo de compilação e  alocadas uma única vez no início da execução e permanecem até final da execução
+			- Vinculação de Variáveis  Dinâmicas:
+				- Dinâmicas de Pilha: alocadas na memória de pilha (stack) em tempo de execução, mas tipadas em tempo de compilação
+				- Dinâmicas de Monte Explícitas: alocadas ou liberadas na memória de monte (heap) por instrução do programador (em C, usamos o método 'malloc()')
+				- Dinâmicas de Monste Implícitas: alocadas na memória de monte apenas quando são atribuídos valores a elas
+
+- Tipos de Dados:
+	O tipo do dado define o conjunto de valores e operações que podem ser realizados por uma variável desse tipo. Tipos difetentes armazenam valores e operações diferentes
+
+	- Descritor (atributos de uma variável, trabalhados na seção 'variáveis' acima)
+	-  Tipos Primitivos: são tipos não definidos em termo de outros tipos
+		- Inteiro (diferentes tamanhos de inteiro: byte(8), short(16), int(32) & long(64))
+		- Booleano (true & false)
+		- Ponto Flutuante (segue IEEE 754 - padrão regulamentador)
+			- Double
+			- Float
+			- Decimal (exclusivo de algumas linguagens, como C#, e funciona na base 10)
+		- Caractere
+		- Cadeia de Caracteres (vetores de caractere) -> aqui alocamos as Strings (segue método de implementação estática ou dinâmica a depender da linguagem)
+		
+	- Tipos de Matrizes (Arrays):
+		Matrizes armazenam elementos de mesmo tipo em uma sequência de memória (podem ser unidimensionais, com vetores, ou bi - tri - dimensionais)
+
+		- Array Estatico: tamanho e dados armazenados em tempo de compilação
+		- Array Dinâmico na Pilha: tamanho e dados alocados em tempo de execução e fixos durante toda a vida do array 
+		- Array Dinâmico na Pilha Fixa: tamanho definido em tempo de compilação, mas dados alocados em tempo de execução
+		- Array Dinâmico no Monte: tamanho e dados alocados em tempo de execução e podem ser alterados durante o tempo de vida do array
+		- Array Dinâmico no Monte Fixa: tamanho e dados definidos em tempo de execuçã e fixos, mas alocados por instrução do programador
+		
+
+	- Matrizes Associativas:
+		- Em Python, conhecemos esse tipo coleção como "Dicionários"
+		- Coleção não ordenada de dados
+		- Seus elementos são baseados em "chave-valor" (diferente de matrizes convencionais baseadas em índice)
+		- Permitem associar strings a valores numéricos (Dicionario: {"elemento": [1, 2, 3]})
+								|	|
+								CHAVE	VALOR
+	- Registros:
+		- Coleção de dados heterogêneos (de diferentes tipos)
+		- Permite armazenar valores de diferentes tipos em um unico local
+		
+	- Ponteiros:
+		- Variável que aponta para o endereço de memória de outras variáveis
+		- Economiza espaço ao referenciar um valor e não armazená-lo
+	
+	- Verificação de Tipos:
+		- Coersão (conversão de tipos entre operações com valores de diferentes tipos, como float + int = float)
+		- Tipagem ou vinculação estática (mencionado anteriormente)
+
+- Expressões e Sentenças de Atribuição:
+
+	- Operadores , Operandos & Expressões:
+		- Operadores: símbolos especiais que representam computações (soma, subtração, etc)
+			 Características dos operadores:
+			- Unário: a++ (1 operando)
+			- Binário: a + b (2 operandos)
+			- Ternário: a = if( X >= 0) then X else -X (3 operandos)
+		- Operandos: valores sobre os quais o operador trabalha
+		- Expressões: combinação de operadores e operandos e operadores que resultam em um valor final (ex.: a + b = c)
+
+	- Precedência de Operadores:
+		O nível de preferência é (), potenciação ^, multiplicação * & divisão /, e por ultimo soma + & subtração -
+
+	- Regras de Associatividade:
+		- Quando uma expressão contém operadores com o mesmo nível, usamos regras como: começamos da direita para a esquerda
+
+	- Sobrecarga de Operadores:
+		- Permite redefinir ou estender o comportamento de operadores padrão para trablahar com tipos de dados definidos pelo usuário (classes/objetos definidos pelo usuário).
+    		- A redefinição dos operadores, trabalhada nas funções dentro de classes criadas pelo usuário, mudam o comportamento desses operadores, que passam a funcionar de forma 'sobrecarregada'.
+
+	- Avaliação Curto Circuito
+		- Expressão no qual o resultado é determinado sem avaliar todos os operandos (ex.: if(2>1 || a==b)
+		- Roda o suficiente pra determinar que a sentença é 'true' ou 'false'
+
+	- Efeitos Colaterais:
+		- Na ordem de operadores, referem-se às situações em que a ordem de avaliação de uma expressão afeta o resultado final.
+		- Ocorrem quando a função modifica um de seus parâmetros ou uma variável global.
+   		-  A ordem de avaliação dos operadores pode variar, e a falta de clareza ou dependência excessiva dessa ordem pode tornar o código difícil de entender e propenso a erros
+
+	- Transparência Referencial:
+		- Se uma função sempre retorna o mesmo resultado para as mesmas entradas e não possui efeitos colaterais,  ela é considerada referencialmente transparente

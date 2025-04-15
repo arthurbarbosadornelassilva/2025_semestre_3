@@ -56,7 +56,7 @@ int main(void)
             if (i == n)
                 printf("Numero de conta-corrente invalido");
             else
-                fazerPIX(saldo, i);
+                fazerPix(saldo, cc, i, n);
         }
     } while (op != 6);
 
@@ -78,7 +78,8 @@ int findConta(int *conta, int cc[1000], int n)
     int j;
     printf("numero da conta: ");
     scanf("%d", conta);
-    for (j = 0; j < n && *conta != cc[j]; j++);
+    for (j = 0; j < n && *conta != cc[j]; j++)
+        ;
     return j;
 }
 void openConta(int conta, float *saldo, int cc[1000], int *n)
@@ -107,13 +108,32 @@ void fazerSaque(float saldo[1000], int i)
     saldo[i] = saldo[i] - valor;
     printf("operacao realizada com sucesso");
 }
-void fazerPix(float saldo[1000], int i)
+void fazerPix(float saldo[1000], int cc[1000], int i, int n)
 {
     float valor;
-    printf("valor do saque: ");
-    valor = tomaValor();
-    saldo[i] -= valor;
-    printf("PIX efetuado com sucesso");
+    int conta, j;
+
+    printf("Numero da conta de destino: ");
+    scanf("%d", &conta);
+    j = findConta(&conta, cc, n);
+    if (j == n)
+    {
+        printf("Conta de destino invalida\n");
+        return;
+    }
+    else
+    {
+        printf("valor do PIX: ");
+        valor = tomaValor();
+        if (saldo[i] >= valor)
+        {
+            saldo[i] -= valor;
+            saldo[j] += valor;
+            printf("operacao realizada com sucesso\n");
+            return;
+        }
+        printf("Saldo insuficiente");
+    }
 }
 
 float tomaValor(void)

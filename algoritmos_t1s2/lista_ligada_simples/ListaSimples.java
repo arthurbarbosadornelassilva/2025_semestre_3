@@ -13,6 +13,7 @@ public class ListaSimples {
             ultimo = novo;
         }
         novo.setProximo(primeiro);
+        primeiro = novo;
     }
     public int removeInicio() {
         if(estaVazia())

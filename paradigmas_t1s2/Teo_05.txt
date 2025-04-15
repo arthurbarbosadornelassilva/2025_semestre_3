@@ -9,10 +9,10 @@ Expressões Infixas:
     São operações onde o operador é posicionado entre os operandos (exemplos: A+B, B+C*D)
 
 Expressões Prefixas:
-    São operações onde o operador é posicionado antes dos operandos (exemplos: +AB, +BC*D)
+    São operações onde o operador é posicionado antes dos operandos (exemplos: +AB, +B*CD)
 
 Expressões Posfixas:
-    São operações onde o operador é posicionado depois dos operandos (exemplos: AB+, BC+D*)
+    São operações onde o operador é posicionado depois dos operandos (exemplos: AB+, BCD*+)
 
 3 -)
 Transparência Referencial:
