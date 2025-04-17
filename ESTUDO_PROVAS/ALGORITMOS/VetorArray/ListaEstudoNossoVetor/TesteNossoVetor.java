@@ -15,7 +15,7 @@ public class TesteNossoVetor {
         System.out.println(vetor.toString());
         System.out.println(vetor.buscaLinear(4));
 
-        vetor.removeElemento(0);
+        vetor.removePrimeiraOcorrencia(5);
         System.out.println(vetor.toString());
     }
 }

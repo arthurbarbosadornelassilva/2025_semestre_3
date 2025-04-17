@@ -73,7 +73,19 @@ public class NossoVetor {
     }
     
     // 4. Remover a primeira ocorrência de um determinado elemento
-    
+    public void removePrimeiraOcorrencia(int elemento) {
+        if (estaVazio())
+            System.out.println("Vetor está vazio!");
+        for (int i = 0; i < vetorInt.length; i++) {
+            if (vetorInt[i] == elemento){
+                for(int j = i; j < vetorInt.length - 1; j++){
+                    vetorInt[j] = vetorInt[j + 1];
+                }
+                break;
+            }
+        }
+    }
+
     // 5. Remover todas as ocorrências de um determinado elemento
     public void removeTodosElementos(int elemento) {
         if (estaVazio())
