@@ -15,7 +15,12 @@ public class NossoVetor {
         return this.ocupacoes == vetorInt.length;
     }
 
-    // 1. Inserir um elemento em uma determinada posição
+    // ****MÉTODO 'estaVazio' CONFERE SE O VETOR ESTÁ VAZIO****
+    public boolean estaVazio() {
+        return this.ocupacoes == 0;
+    }
+
+    // 1. Inserir um elemento ao final do vetor
     public void insereElemento(int elemento, int i) {
         if (estaCheio()) {
             System.out.println("Vetor cheio!");
@@ -55,10 +60,32 @@ public class NossoVetor {
     }
     
     // 3. Remover um elemento de uma determinada posição
-
+    public void removeElemento(int posicao) {
+        if (estaVazio())
+            System.out.println("Vetor está vazio!");
+        for (int i = 0; i < vetorInt.length; i++) {
+            if (vetorInt[i] == vetorInt[posicao]){
+                for(int j = i; j < vetorInt.length - 1; j++){
+                    vetorInt[j] = vetorInt[j + 1];
+                }
+            }
+        }
+    }
+    
     // 4. Remover a primeira ocorrência de um determinado elemento
-
+    
     // 5. Remover todas as ocorrências de um determinado elemento
+    public void removeTodosElementos(int elemento) {
+        if (estaVazio())
+            System.out.println("Vetor está vazio!");
+        for (int i = 0; i < vetorInt.length; i++) {
+            if (vetorInt[i] == elemento){
+                for(int j = i; j < vetorInt.length - 1; j++){
+                    vetorInt[j] = vetorInt[j + 1];
+                }
+            }
+        }
+    }
 
     @Override
     public String toString() {
