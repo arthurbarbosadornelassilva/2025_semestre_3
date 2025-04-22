@@ -1,6 +1,9 @@
 public class ListaLigada {
-    
+    private String primeiro;
+
     // 1. Inserir um elemento em uma determinada posição.
+    
+
     // 2. Verificar quantas vezes um elemento aparece na lista.
     // 3. Devolver a posição da primeira ocorrência de um determinado elemento.
     // 4. Remover um elemento de uma determinada posição.

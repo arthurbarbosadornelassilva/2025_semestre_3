@@ -99,6 +99,28 @@ public class NossoVetor {
         }
     }
 
+    // 6. Criar uma nova instância da classe, com as posições de ocorrência de um determinado elemento.
+
+    // 7. Devolver o índice da primeira ocorrência de um determinado elemento
+
+    // 8. Devolver o tamanho atual da lista de valores (quantos elementos ela tem)
+
+    // 9. Esvaziar a lista
+
+    // 10. Devolver uma cópia da lista
+
+    // 11. Reduzir o vetor ao tamanho dele
+
+    // 12. Receber 2 vetores de entrada e mesclá-los num único vetor.
+
+    // 13. Somar os elementos do vetor
+
+    // 14. Encontrar o maior elemento armazenado
+
+    // 15. Encontrar a posição do maior elemento armazenado
+    
+    // 16. Encontrar o menor elemento armazenado e coloca-lo na posição 0 (fazer a troca)
+
     @Override
     public String toString() {
         return Arrays.toString(vetorInt);

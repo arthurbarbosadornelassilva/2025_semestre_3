@@ -30,7 +30,7 @@ public class NossoVetor {
     public NossoVetor() {
         // vetor = new int[10];
         // ocupacao = 0
-        this(10); // Construtor 
+        this(100000000); // Construtor 
     }
 
     // void aumentarVetor() { 
