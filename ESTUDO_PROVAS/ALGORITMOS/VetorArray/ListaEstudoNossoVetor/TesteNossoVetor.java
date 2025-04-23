@@ -1,10 +1,12 @@
+
 public class TesteNossoVetor {
+
     public static void main(String[] args) {
         NossoVetor vetor = new NossoVetor(10);
 
         vetor.insereElemento(2, 0);
         vetor.insereElemento(4, 1);
-        vetor.insereElemento(3,2);
+        vetor.insereElemento(3, 2);
         vetor.insereElemento(1, 3);
         vetor.insereElemento(5, 4);
 
