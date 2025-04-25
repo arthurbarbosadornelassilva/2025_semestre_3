@@ -1,0 +1,73 @@
+Características do R:
+
+- R é uma linguagem de programação e ambiente de software livre e código aberto (open source), voltada principalmente para cálculos estatísticos
+- A linguagem R é uma combinação da linguagem S com a semântica de escopo léxico da linguagem Scheme
+- Gerenciamento de memória: alocamos uma quantidade fixa de memória na inicialização e a gerenciamos com um coletor de lixo dinâmico. Isso significa que há muito pouco crescimento de heap e, como resultado, há menos problemas de paginação
+- Escopo:as funções acessam as variáveis criadas no
+corpo da própria função, como também as variáveis contidas no
+ambiente que a função foi criada
+- A linguagem R também é uma linguagem interpretada
+e baseada, além da linguagem S, na linguagem FORTRAN e C
+- R tem uma interface padrão baseada em linha de comando, mas também existem GUIs de destaque para R, como o RStudio
+- O CRAN é um conjunto de sites (espelhos) que transportam
+material idêntico, com as contribuições do R de uma forma geral
+
+EXERCÍCIOS:
+
+PLP-Lab-Lista 8
+
+1 -)
+
+x <- c(82, 91, 100, 68, 87, 73, 78, 80, 65, 84, 116, 76, 97, 100, 105, 77, 73, 78)
+y <- c(71, 64, 43, 67, 56, 73, 68, 56, 76, 65, 45, 58, 45, 53, 49, 78, 73, 68)
+
+# Diagrama de dispersão
+plot(x, y,
+     main = "Dispersão entre Idade e Massa Muscular",
+     xlab = "Idade (anos)",
+     ylab = "Massa Muscular (kg)",
+     pch = 19,
+     col = "blue")
+
+# Coeficiente de correlação
+correlacao <- cor(x, y)
+print(paste("Coeficiente de correlação:", round(correlacao, 3)))
+
+# Regressão linear
+modelo <- lm(y ~ x)
+abline(modelo, col = "red", lwd = 2)
+
+# Estimando massa muscular para idade = 50
+estimativa_50 <- predict(modelo, newdata = data.frame(x = 50))
+print(paste("Estimativa de massa muscular para 50 anos:", round(estimativa_50, 2)))
+
+
+2 -)
+# 1. Criando o data frame
+praias <- data.frame(
+  local = c("Joaquina", "Campeche", "Armação", "Praia Mole"),
+  caranguejos = c(42, 34, 59, 18)
+)
+
+# 2. Praias com menos de 30 caranguejos
+menos_30 <- subset(praias, caranguejos < 30)
+print("Praias com menos de 30 caranguejos:")
+print(menos_30)
+
+# 3. Adicionando coluna de região
+praias$regiao <- ifelse(praias$local %in% c("Joaquina", "Praia Mole"), "leste", "sul")
+
+# 4. Selecionando praias da região leste com menos de 20 caranguejos
+leste_menos_20 <- subset(praias, regiao == "leste" & caranguejos < 20)
+print("Praias da região leste com menos de 20 caranguejos:")
+print(leste_menos_20)
+
+# 5. Qual praia do sul teve mais de 40 caranguejos?
+sul_mais_40 <- subset(praias, regiao == "sul" & caranguejos > 40)
+print("Praias da região sul com mais de 40 caranguejos:")
+print(sul_mais_40)
+
+# 6. Qual região possui praias com mais de 50 caranguejos?
+regiao_mais_50 <- subset(praias, caranguejos > 50)
+print("Regiões com praias que têm mais de 50 caranguejos:")
+print(unique(regiao_mais_50$regiao))

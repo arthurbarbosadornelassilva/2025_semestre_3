@@ -1,0 +1,151 @@
+Característcas do Rust:
+
+- linguagem de programação de sistemas criada pela Mozilla Research em 2010, projetada para oferecer desempenho de baixo nível semelhante ao C e C++
+- forte foco em segurança de memória e concorrência segura
+- assim como o C e o C++, o Rust não tem um grande runtime ou coletor de lixo
+- Rust previne muitos dos bugs relacionados ao uso incorreto de memória
+- Rust permite criar um software de sistemas confiável e
+eficiente
+- Rust serve para criar softwares de rede, como servidores Web, servidores de email e navegadores da Web, e softwares embarcados, jogos, programas de cli, criptografia, iot, etc.
+
+Vantagens & Desvantagens do Rust:
+
+VANTAGENS:
+- Segurança de memória sem coletor de lixo (garbage collector)
+- Performance comparável à de C/C++ (compilação rápida e eficiente)
+- Ferramentas modernas integradas (o cargo -gerenciador de pacotes do Rust - é poderoso e fácil de usar)
+- Compilador inteligente e mensagens de erro claras
+- Comunidade ativa e ecossistema em crescimento
+- Concorrência segura e eficiente
+
+DESVANTAGENS:
+- Curva de aprendizado acentuada
+- Compilação lenta (principalmente em projetos grandes)
+- Sintaxe mais complexa que outras linguagens de alto nível
+- Ecossistema ainda em crescimento para certas áreas
+- Poucos empregos em comparação com linguagens mais
+populares
+
+
+EXERCÍCIOS:
+
+PLP-Lab-Lista 7
+
+1 -)
+use std::collections::HashMap;
+use std::io::{self, Write};
+
+fn main() {
+    println!("Digite uma frase:");
+
+    // Lê a frase do terminal
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Erro ao ler a entrada");
+
+    // Conta as palavras
+    let word_counts = count_words(&input);
+
+    // Exibe os resultados
+    println!("\nContagem de palavras:");
+    for (word, count) in word_counts {
+        println!("{}: {}", word, count);
+    }
+}
+
+// Função para contar palavras
+fn count_words(text: &str) -> HashMap<String, usize> {
+    let mut counts = HashMap::new();
+
+    for word in text.split_whitespace() {
+        // Remove pontuação e converte para minúsculas
+        let word = word
+            .trim_matches(|c: char| !c.is_alphanumeric())
+            .to_lowercase();
+
+        if !word.is_empty() {
+            *counts.entry(word).or_insert(0) += 1;
+        }
+    }
+
+    counts
+}
+
+2 -)
+fn main() {
+    let mut entrada1 = String::new();
+    let mut entrada2 = String::new();
+    
+    println!("Digite o primeiro valor: ");
+    io::stdin().read_line(&mut entrada1).expect("Erro na leitura");
+    
+    println!("Digite outro valor: ");
+    io::stdin().read_line(&mut entrada2).expect("Erro na leitura");
+    
+    let numero1: i32 = entrada1.trim().parse().expect("Digite um número válido!");
+    let numero2: i32 = entrada2.trim().parse().expect("Digite um número válido!");
+    
+    let soma = numero1 + numero2;
+    println!("{}", soma);
+}
+
+3 -)
+use std::io;
+
+fn main() {
+    let mut entrada = String::new();
+    
+    println!("Digite um número:");
+    io::stdin().read_line(&mut entrada).expect("Erro na leitura!");
+    let numero: i32 = entrada.trim().parse().expect("Digite um valor válido!");
+    
+    println!("Tabuada do número {}", numero);
+    for i in 1..=10 {
+        println!("{} x {} = {}", numero, i, numero * i);
+    }
+}
+
+4 -)
+use std::io;
+
+fn bubble_sort(vetor: &mut Vec<i32>) {
+    let tamanho = vetor.len();
+
+    for i in 0..tamanho {
+        for j in 0..tamanho - 1 - i {
+            if vetor[j] > vetor[j + 1] {
+                vetor.swap(j, j + 1);
+            }
+        }
+    }
+}
+
+fn main() {
+    println!("Digite três números, com espaço entre eles:");
+    let mut entrada = String::new();
+    io::stdin().read_line(&mut entrada).expect("Erro na leitura!");
+
+    let mut numeros: Vec<i32> = entrada
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().expect("Digite apenas números inteiros"))
+        .collect();
+
+    if numeros.len() != 3 {
+        println!("Você precisa digitar exatamente três números!");
+        return;
+    }
+
+    bubble_sort(&mut numeros);
+
+    println!("Números ordenados: {:?}", numeros);
+}
+
+
+5 -)
+- Buffer Overflow: erro de estouro de buffer de memória é um erro onde um conjunto de dados acaba por exceder o espaço particionado para armazená-los, podendo causar comportamentos ou falhas inesperadas no programa.
+
+- Use-after-free: erro que ocorre quando um programa tenta acessar ou usar um dado que ja tenha sido desalocado (limpo) da memória
+
+- Acesso a ponteiros nulos ou inválidos: erro que ocorre quando se tenta acessar a memória apontada por um ponteiro que não aponta para nenhum endereço válido (ponteiro nulo)
