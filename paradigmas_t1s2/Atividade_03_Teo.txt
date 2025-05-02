@@ -1,0 +1,53 @@
+** ATIVIDADE 03 -Teoria **
+
+EXERCÍCIOS DA LISTA 7
+
+- 1)
+Elementos importantes de funções (métodos, procedimentos, etc):
+- Chamada & Retorno de Funções:
+    - Chamada: é o momento em que a função é invocada no programa, ocorre a passagem de argumentos (se necessário) e ocorre a execução
+    - Retorno (return): é o valor que a função devolve após ser executada (funções não necessariamente tem um retorno, caso sejam vazias (void))
+- Parâmetros & Argumentos:
+    - Parâmetros (parâmetro formal) são identificadores, que aparecem em uma declaração de função ou procedimento;
+    - Argumentos (parâmetro real) são as expressões que aparecem na chamada de função, atribuindo valor ao parâmetro definido naquela função
+- Mecanismos de Passagem de Parâmetros:
+    - Por valor
+    - Por referência
+    - Por resultado-valor e resultado
+    - Por nome
+- Recursão: é quando uma função chama a si mesma, direta ou indiretamente, para resolver um problema dividindo-o em partes menores
+
+
+- 2)
+Passagem de Parâmetros:
+- PHP: a passagem de parâmetros ocorre após a declaração do nome da função, entre parênteses:
+    'function exemplo(&$x) {
+        $x = 10;
+    }'
+As funções em PHP podem ter parâmetros vazios ou mais de um parâmetro, separados por vírgula, sendo que é necessário utilizar a notação $ para determinar um parâmetro e um nome.
+Os parâmetros da função são variáveis locais ao corpo da função, sendo que é possível passar parâmetros por valor ou por referência(&)
+
+- C++: a passagem de parâmetros ocorre após a declaração do tipo e do nome da função, entre parênteses:
+    'int exemplo(int param1, int param2){
+        return valorX;
+    }'
+As funções em C++ podem ter parâmetros vazios ou mais de um parâmetro, separados por vírgula, sendo que, para cada parâmetro, é necessário definir um tipo e nome.
+Os parâmetros da função são variáveis locais ao corpo da função, sendo que é possível passar parâmetros por valor, por referência(&) ou por ponteiro.
+(fonte: http://www.decom.ufop.br/romildo/2019-2/bcc702/Aula7-Funcoes.pdf)
+
+Por padrão, tanto o C++ quanto o PHP passam parâmetros por valor (a função recebe uma cópia da variável)
+
+
+EXERCÍCIOS DA LISTA 8
+
+- 1)
+Elementos importantes sobre Funções & Recursividade:
+Funções são elementos centrais das linguagens de Porgramação
+- Sistema de Tipos do Clite: evita erros durante a chamada de funções
+- Diferenças entre Sintaxe Abstrata e Concreta
+- Registro de ativação e armazenamento na Pilha de Tempo de Execução
+- Validade de Chamada de Função e Retorno
+
+- 2)
+A pilha de tempo de execução deve ser gerenciada de forma a evitar erros de 'stack overflow', causados pelo exceço de recursões de uma função, o quê gera um estouro na pilha de chamadas.
+Essa tarefa é crítica porque erros de transbordamento de memória podem causar falhas em outros segmentos do código
