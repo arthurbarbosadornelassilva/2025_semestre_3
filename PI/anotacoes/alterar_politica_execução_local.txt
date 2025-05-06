@@ -1,0 +1,36 @@
+Opção 1: Alterar a Política de Execução do PowerShell (Escopo Local - Recomendado para minimizar riscos):
+
+Esta é a abordagem mais recomendada, pois altera a política de execução apenas para a sessão atual do PowerShell, minimizando os riscos de segurança em todo o sistema.
+
+Abra o PowerShell como Administrador: Clique com o botão direito no menu Iniciar, procure por "PowerShell", clique com o botão direito em "Windows PowerShell" e selecione "Executar como administrador".
+
+Verifique a Política de Execução Atual: Execute o seguinte comando:
+
+* Terminal PowerShell
+'Get-ExecutionPolicy'
+
+A saída provavelmente será algo como Restricted (padrão) ou AllSigned.
+
+Altere a Política de Execução para a Sessão Atual: Execute o seguinte comando para permitir a execução de scripts não assinados apenas na sessão atual:
+
+* Terminal PowerShell
+'Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process'
+
+-ExecutionPolicy Bypass: Permite que todos os scripts sejam executados, independentemente da assinatura.
+-Scope Process: Aplica essa política apenas ao processo atual do PowerShell. Quando você fechar a janela do PowerShell, a política de execução voltará à sua configuração anterior.
+Execute o Comando xata: Agora tente executar o comando que estava causando o erro (provavelmente algo como xata init ou algum outro comando xata que invoca o xata.ps1).
+
+
+Opção 2: Alterar a Política de Execução para o Usuário Atual:
+
+Esta opção altera a política de execução para o seu usuário atual. É um pouco menos restritiva que a opção anterior, mas ainda mais segura do que alterar a política para todo o sistema.
+
+Abra o PowerShell: Você pode abrir o PowerShell como usuário normal.
+
+Altere a Política de Execução para o Usuário Atual: Execute o seguinte comando:
+
+* Terminal PowerShell:
+'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser'
+
+-ExecutionPolicy RemoteSigned: Permite a execução de scripts baixados da internet que são assinados por uma autoridade confiável. Scripts criados localmente não precisam ser assinados.
+-Scope CurrentUser: Aplica essa política apenas ao seu perfil de usuário.

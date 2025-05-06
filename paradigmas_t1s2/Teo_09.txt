@@ -1,0 +1,37 @@
+TRATAMENTO DE EXCESSÕES:
+
+
+Definição:
+- Termo exceção designa um evento ocorrido durante a execução de um programa que desvia o fluxo normal
+- Nem todas condições geradoras de erro podem ser detectadas em tempo de compilação
+- Software seguro e confiável deve implementar um comportamento aceitável na presença dessas condições anormais
+- Exceções requerem ações específicas e imediatas
+
+Abordagens de LPs para tratar exceções:
+- Não oferecer recursos próprios (recursos externos àquela linguagem)
+- Possuir mecanismo de tratamento de Exceções
+- Ausência de Mecanismo de Exceção
+    Opções:
+    • Deixar o programa abortar
+    • Testar a condição excepcional antes de ela ocorrer e realizar o tratamento imediato
+    • Retornar código de erro indicando a exceção ocorrida em uma variável global
+
+O quê são exceções:
+
+- Condições síncronas, anômalas, o que significa que elas correspondem a desvios de curso de ações esperados que ocorrem em locais previsíveis do programa (por exemplo, o 'overflow' ocorrerá somente onde está sendo realizada uma operação aritmética)
+- Isto distingue exceções de condições assíncronas, isto é, que podem ocorrer a qualquer momento (uma interrupção
+gerada por um usuário ou um sinal do dispositivo são exemplos de condições assíncronas)
+
+Como ocorrem as exceções:
+- Forma Explícita: coloca o procedimento em execução e suspende a execução da unidade que o chamou. Após a execução completa do procedimento, a unidade que o chamou volta a ser executada a partir do ponto da invocação
+- Forma Implícita: duas ações diferentes são possíveis no término do tratamento de exceções: continuidade da execução da unidade que fez a invocação, assim como ocorre com procedimentos, ou término de execução de tal unidade.
+
+* Quando é sinalizada uma exceção em um programa, ele invoca o tratador de exceção neste ponto, mesmo sem a ocorrência da condição associada (tanto de forma implícita quanto explícita)
+
+Abstração:
+- Abstração é uma visão ou representação de uma entidade que inclui apenas os atributos mais significativos
+- Operação mental de abstração depende não tanto do fenômeno
+observado, mas do interesse do observador
+- Auxilia no entendimento de problemas ou sistemas complexos, destacando aspectos do objeto real e analizando as partes importantes separadamente
+
+Abstração na programação:
