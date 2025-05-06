@@ -13,6 +13,13 @@ public class ArvoreBinaria {
             insereRec(novo, raiz);   // insereRec() -> função recursiva para inserir elementos na árvore
         }
     }
+    public void insereOcorrencias (int info) {
+        if(arvoreVazia()) {
+            raiz = new NoOcorrencias(info);
+        } else {
+            insereOcorrenciasRec(info, raiz);
+        }
+    }
     public void insereRec (No novo, No atual) {
         if (novo.getInfo() > atual.getInfo()) {    // insere elementos maiores que info à direita
             if (atual.getDireita() == null)
@@ -26,6 +33,16 @@ public class ArvoreBinaria {
                 insereRec(novo, atual.getEsquerda());
         }
     }
+    void insereOcorrenciasRec(int info, No atual) {
+        if (info == atual.getInfo()) {
+
+        } else if (info > atual.getInfo()) {
+            
+        } else {
+
+        }
+    }
+
     // usar o percurso em ordem simétrica para construit o toString
     @Override
     public String toString () {
