@@ -1,0 +1,56 @@
+PARADIGMA FUNCIONAL:
+
+➢Eficiência é a preocupação primária, ao invés da adequação
+da linguagem para o desenvolvimento de software
+➢ As linguagens imperativas podem ser vistas como uma
+sucessão de melhorias ao modelo básico (Fortran 1)
+➢ O projeto das linguagens funcionais é baseado em funções
+matemáticas
+➢ Uma base teórica sólida.
+➢ Sem preocupação com a arquitetura da máquina
+➢ São mais legíveis e confiáveis
+➢ Mais chances de programas funcionais estarem corretos
+
+Sobre Programação Funcional (CAI NA PROVA!!)
+
+➢ Definição:
+    É o processo de construir software através de composição de funções, evitando compartilhamento de estados, dados mutáveis e efeitos colaterais.
+    Essas funções podem ser puras, que não provocam efeitos colaterais, ou impuras.
+
+➢ Composição de Funções (IMPORTANTE!!):
+    - É criar uma nova função através da composição de outras
+    - Toma duas funções como parâmetro e define uma função cujo valor é a primeira função aplicada ao resultado da segunda: h = f o g   -->    h(x) = f(g(x))
+
+    EXEMPLO:
+        1 -)    f(x) = 2x + 3   &   g(x) = x² + 5x -4
+        2 -)    f(g(x)) = 2(x² + 5x -4) + 3 
+        3 -)    f(g(x)) = 2x² + 10x - 5
+
+➢ Sobre Funções Puras e Impuras:
+    - Função Pura (ou determinística): sempre que for passada a mesma entrada, sairá o mesmo resultado. Não provocam mutação de estado ou efeitos colaterais, ou seja, apresentam referência referencial
+
+    - Função Impura: pode retornar diferentes valores para a mesma entrada.
+    Toda função que apresenta uma dependência externa (função importada, variável global que pode ter o valor alterado, etc) será impura.
+    Uma função ou expressão tem um efeito colateral quando ela modifica algum estado fora de seu escopo
+
+    ➢ Imutabilidade:
+        - Imutabilidade significa que uma vez que uma variável que recebeu um valor, vai possuir esse valor para sempre, ou quando criamos um objeto ele não pode ser modificado.
+
+    ➢ Estado Compartilhado:
+        - Estado compartilhado é qualquer valor que está acessível por mais de um ponto de uma aplicação. Utiliza uma variável externa que está fora do seu escopo e não depende apenas dos argumentos passados.
+
+➢ Funções e o Cálculo Lambda (IMPORTANTE!!):
+    - Em linguagens funcionais, não há um conceito de “célula de memória” ou de atualização de um valor da memória ou do valor de uma célula de memória.
+    - Uma linguagem funcional é pura se não houver nenhum conceito de um operador de atribuição ou de uma célula de memória; caso contrário, dizemos que ela é impura. No entanto, muitas linguagens de programação funcionais retêm alguma forma de operador de atribuição e são, portanto, impuras.
+    - A base da programação funcional é o Cálculo Lambda, desenvolvido por Alonzo Church
+
+    ➢ Sobre o Cálculo Lambda:
+        - Uma linguagem de programação funcional é essencialmente um cálculo lambda aplicado com valores constantes e funções embutidas. A expressão lambda pura (xyx) pode facilmente ser escrita também assim: (x × x) ou (x ∗ x).
+        - Além do mais, essa última forma pode ser escrita em um estilo prefixo (* x x).
+        - Quando somamos constantes como números com sua interpretação usual e suas definições para funções, como *, obtemos um cálculo lambda aplicado. Por exemplo, (*2 x) é uma expressão em um cálculo lambda a aplicado
+
+➢ Algumas Linguagens Funcionais
+    - Lisp
+    - Haskell
+    - Scala
+    - Lua
