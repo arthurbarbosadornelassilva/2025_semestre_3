@@ -1,0 +1,23 @@
+Características de Scala:
+
+- O nome "Scala" vem de "Scalable Language" (linguagem escalável), pois a linguagem pode ser dimensionada para diferentes tamanhos de projetos e sistemas;
+- Linguagem multiparadigma;
+- Combina aspectos da POO com programação funcional;
+- Roda na JVM (Java Virtual Machine);
+- Projetada para ser concisa, elegante e segura;
+- Conta com tipagem estática e inferência de tipos;
+- Linguagem nativa do framework de processamento Apache Spark;
+- Curva de aprendizado maior devido à alguns conceitos avançados;
+- Ecossistema de bibliotecas e frameworks vasto.
+
+A combinação do paradigma orientado com funcional faz com que o Scala permita escrever CÓDIGOS MAIS CONCISOS E EXPRESSIVOS, FACILITANDO A MANUTENÇÃO. Também oferece recursos de SIMULTANEIDADE, CAPAZ DE LIDAR COM UM NÚMERO ENORME DE CONEXÕES
+
+EXERCÍCIOS:
+
+1 -)
+
+2 -)
+
+3 -)
+
+4 -)
