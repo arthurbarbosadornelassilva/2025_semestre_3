@@ -7,11 +7,14 @@ public class NoOcorrencias extends No {
     public int getOcorrencias() {
         return ocorrencias;
     }
-    public void setOcorrencias(int ocorrencias) {
-        this.ocorrencias = ocorrencias;
+    public void incrementaOcorrencias() {
+        ocorrencias++;
+    }
+    public void decrementaOcorrencias() {
+        ocorrencias--;
     }
     @Override
-    public String toString() {
-        return super.toString() + " ocorre" + ocorrencias + " vezes\n";
+    public String toString () {
+        return super.toString() + " ocorre " + ocorrencias + " vezes\n";
     }
 }

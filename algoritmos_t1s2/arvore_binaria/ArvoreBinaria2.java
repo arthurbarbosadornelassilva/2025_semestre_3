@@ -1,7 +1,7 @@
-public class ArvoreBinaria <T extends Comparable<T>> {
+public class ArvoreBinaria2 <T extends Comparable<T>> {
     private No<T> raiz;
     
-    public ArvoreBinaria() {
+    public ArvoreBinaria2() {
         raiz = null;
     }
     public boolean arvoreVazia() {
@@ -16,16 +16,16 @@ public class ArvoreBinaria <T extends Comparable<T>> {
     }
     void insereRec(No<T> novo, No<T> atual) {
         if (novo.getInfo().compareTo(atual.getInfo()) > 0) {
-            if (atual.getDiretia() == null)
+            if (atual.getDireita() == null)
                 atual.setDireita(novo);
             else
-                insereRec(novo, atual.getDiretia());
+                insereRec(novo, atual.getDireita());
         }
         else {
-            if (atual.getEquerda() == null)
+            if (atual.getEsquerda() == null)
                 atual.setEsquerda(novo);
             else
-                insereRec(novo, atual.getEquerda());
+                insereRec(novo, atual.getEsquerda());
         }
     }
     //percurso em ordem simétrica para o toString
@@ -36,11 +36,11 @@ public class ArvoreBinaria <T extends Comparable<T>> {
     }
     String toStringRec(No<T> atual) {
         String s = "";
-        if (atual.getEquerda() != null)
-            s += toStringRec(atual.getEquerda());
+        if (atual.getEsquerda() != null)
+            s += toStringRec(atual.getEsquerda());
         s += atual + "\n";
-        if (atual.getDiretia() != null)
-            s += toStringRec(atual.getDiretia());
+        if (atual.getDireita() != null)
+            s += toStringRec(atual.getDireita());
         return s;
     }
 }

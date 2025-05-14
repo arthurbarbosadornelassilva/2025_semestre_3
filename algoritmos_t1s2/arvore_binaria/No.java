@@ -9,10 +9,10 @@ public class No <T extends Comparable<T>> {
     public T getInfo() {
         return info;
     }
-    public No<T> getEquerda() {
+    public No<T> getEsquerda() {
         return esquerda;
     }
-    public No<T> getDiretia() {
+    public No<T> getDireita() {
         return direita;
     }
     public void setInfo(T info) {
