@@ -1,0 +1,8 @@
+# Para instalar o xata
+npm install -g @xata.io/cli (às vezes, é necessário retirar o @)
+
+# Para fazer a autenticação do perfil
+xata auth login -> usar a chave da api do xata (XATA_API_KEY)
+
+# Para setar o xata na pasta
+xata init

@@ -1,8 +1,19 @@
-Comandos para inicializar um novo template com as dependências necessárias usando o Expo:
+1 -) Comandos para inicializar um novo template com as dependências necessárias usando o Expo:
 
-1 -)
 npx create-expo-app@latest <nome> //inicializa um novo projeto
 
 npm run reset-project //apaga o app exemplo instalado, mas mantém as dependências e pastas
 
 npx expo start //inicia o servidor
+
+2 -) Comandos para trabalhar 
+
+✅ Your project is ready!
+
+To run your project, navigate to the directory and run one of the following npm commands.
+
+- cd <teste> (ou outra pasta do projeto)
+- npm run android
+- npm run ios # you need to use macOS to build the iOS project - use the Expo app if 
+you need to do iOS development without a Mac
+- npm run web

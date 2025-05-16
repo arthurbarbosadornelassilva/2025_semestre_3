@@ -1,0 +1,17 @@
+1 -) npm init -y (para iniciar um novo pacote .json )
+
+# Para instalar as dependências para o desenvolvimento
+
+1 -) npm install -D @types/express @types/node te-node nodemon rimraf
+
+2 -) npm install -D 
+
+3 -) npm install dotenv express
+
+4 -) npm install nodemon
+
+# Para instalar bcrypt & jsonwebtoken
+
+1 -) npm install --save-dev @types/jsonwebtoken
+
+2 -) npm install --save-dev @types/bcrypt

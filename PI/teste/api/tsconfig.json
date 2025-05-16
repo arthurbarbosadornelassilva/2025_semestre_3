@@ -5,9 +5,12 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "target": "es6",
-    "lib": ["esnext"],
-    "moduleResolution": "Node",
+    "lib": [
+      "esnext"
+    ],
+    "moduleResolution": "node16",
     "esModuleInterop": true,
-    "module": "CommonJS"
-  }
+    "module": "Node16"
+  },
+  "extends": "expo/tsconfig.base"
 }
