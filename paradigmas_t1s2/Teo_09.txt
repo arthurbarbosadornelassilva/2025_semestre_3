@@ -33,5 +33,3 @@ Abstração:
 - Operação mental de abstração depende não tanto do fenômeno
 observado, mas do interesse do observador
 - Auxilia no entendimento de problemas ou sistemas complexos, destacando aspectos do objeto real e analizando as partes importantes separadamente
-
-Abstração na programação:

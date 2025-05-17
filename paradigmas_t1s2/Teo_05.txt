@@ -3,6 +3,11 @@ EXERCÍCIOS:
 PLT - TEORIA - LISTA 5
 
 1 -)
+Conceitos Importantes (Capítulo 7 - Conceitos de Linguagens de Programação):
+    - Operadores e Operandos (saber diferenciar os dois conceitos e apontar quais os tipos de operadores);
+    - Ordem de Avaliação dos Operadores (para entender como uma linguagem trabalha a precedência de operadores e regras de associatividade);
+    - Ordem de Avaliação dos Operandos (para entender como ocorrem efeitos colaterais oo transparência referencial em em um programa);
+    - Operadores Sobrecarregados (para entender o comportamento de operadores ao trabalhar com tipos não primitivos);
 
 2 -)
 Expressões Infixas:

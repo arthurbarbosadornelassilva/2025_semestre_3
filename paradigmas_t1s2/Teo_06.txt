@@ -1,0 +1,179 @@
+Estruturas de Controle no Nível de Sentença
+O material aborda as estruturas de controle no nível de sentença em linguagens de programação, essenciais para a flexibilidade e poder das computações. 
+
+Tópicos Principais
+Introdução
+Computações envolvem avaliação de expressões e atribuição de valores.
+Controle de fluxo permite seleção entre caminhos e repetição de sentenças.
+Ocorre em vários níveis: expressões, unidades de programas e sentenças. 
+Inicialmente, sentenças de controle baseavam-se em instruções de processadores (ex: FORTRAN I e IBM 704).
+A sentença goto foi muito usada, mas tem problemas; seleção e repetição são alternativas melhores. 
+Exemplo de goto em C:
+C
+
+#include <stdio.h>
+
+int main() {
+  int i, j;
+  for (i = 0; i < 10; i++) {
+    printf_s("Outer loop executing. i=%d\n", i);
+    for (j = 0; j < 3; j++) {
+      printf_s("Inner loop executing. j=%d\n", j);
+      if (i == 5) {
+        goto stop;
+      }
+    }
+  }
+  stop: printf_s("Jumped to stop. i=%d\n", i);
+}
+Sentenças de Seleção
+Estruturas de controle escolhem caminhos de execução.
+Duas categorias: seleção de duas vias e seleção múltipla. 
+Seleção de Duas Vias:
+Forma geral: if condição then-cláusula else-cláusula. 
+Questões de projeto: tipo da expressão de controle, especificação das cláusulas, significado de seletores aninhados. 
+Expressão de controle entre parênteses (em C/C++, Python permite aritméticas, Ada/Java/Ruby/C# booleanas). 
+Cláusulas podem ser sentenças simples ou compostas (C usa chaves). 
+Perl exige cláusulas compostas. 
+Fortran/Ada/Lua/Ruby usam sequências de sentenças e palavra reservada para finalizar (ex: end em Ruby). 
+Python usa indentação. 
+Aninhamento de seletores pode gerar ambiguidade (resolvido por regras de semântica estática, ex: else casa com if mais próximo em Java, ou uso de chaves). 
+Exemplo de if-else em Perl:
+Perl
+
+#!/usr/bin/perl
+print "Digite a senha: ";
+chomp($password = <STDIN>);
+if ($password eq 'rush2112') {
+  print "Senha correta, entrando no sistema...\n";
+} else {
+  print "Senha incorreta! Invasão cancelada\n";
+}
+Exemplo de if-else em Ruby:
+Ruby
+
+if stock < 1
+  puts "Sorry we are out of stock!"
+else
+  puts "Thanks for your order!"
+end
+Exemplo de if-else em Python:
+Python
+
+if x > y:
+  x = y
+  print("Gatos são animais maravilhosos")
+Seleção Múltipla:
+Seleciona entre várias sentenças. 
+Questões de projeto: forma da expressão de controle, especificação dos segmentos, fluxo de execução, valores dos casos, tratamento de seletores não presentes. 
+Exemplos em C/C++/Java ( switch-case com break ). 
+C# não permite execução implícita de múltiplos segmentos, usa strings como expressões. 
+Ada, Ruby e Python também possuem formas de seleção múltipla ( elsif em Ruby, if-elif-else em Python).
+PHP switch permite tipos escalares variados nos casos. 
+Exemplo de switch-case em C:
+C
+
+switch (index) {
+  case 1:
+  case 3: odd += 1;
+          sumodd += index;
+          break;
+  case 2:
+  case 4: even += 1;
+          sumeven += index;
+          break;
+  default: printf("Error in switch, index %d\n", index);
+}
+Exemplo de switch-case em C#:
+C#
+
+switch (formato) {
+  case FormatoPlanta.Quadrado:
+    FormatoSelecionado = new Quadrado(Largura, Altura);
+    break;
+  case FormatoPlanta.Retangulo:
+    FormatoSelecionado = new Retangulo(Largura, Altura);
+    break;
+  case FormatoPlanta.Triangulo:
+    FormatoSelecionado = new Triangulo(Largura, Altura, 2);
+    break;
+}
+return FormatoSelecionado;
+Exemplo de if-elif-else em Python:
+Python
+
+if condicao1:
+  codigo1
+elif condicao2:
+  codigo2
+else:
+  codigo_padrao
+Sentenças de Iteração
+Executam sentenças repetidamente (laços). 
+Questões de projeto: como controlar a iteração e onde colocar o mecanismo de controle. 
+Corpo do laço são as sentenças controladas. 
+Laços Controlados por Contador:
+Variável de laço mantém a contagem. 
+Especifica-se valor inicial, final e passo. 
+Questões de projeto: tipo/escopo da variável, se pode ser alterada e se parâmetros do laço são avaliados uma vez ou por iteração. 
+Exemplos em Ada (variável não alterada pelo laço) e C. 
+Exemplo de for em C:
+C
+
+for (exp1; exp2; exp3) {
+  // código
+}
+Laços Controlados Logicamente:
+Controle por expressão booleana. 
+Questão de projeto: pré-teste ou pós-teste. 
+C/C++/Java têm ambos; Ada só pré-teste; Fortran 95 nenhum; Perl/Ruby têm while e until (Perl tem pós-teste também). 
+Exemplos de while e do-while em C:
+C
+
+while (condicao) {
+  // código
+}
+
+do {
+  // código
+} while (condicao);
+Exemplos de while e until em Perl:
+Perl
+
+while (condicao) {
+  # código
+}
+
+until (condicao) {
+  # código
+}
+Laços com Controles Posicionados pelo Usuário:
+Programador escolhe o local do controle (ex: break em Java). 
+Exemplo de break em Java:
+Java
+
+while (true) {
+  if (condicao) {
+    break;
+  }
+  // código
+}
+Iteração Baseada em Estrutura de Dados:
+Itera sobre elementos de uma estrutura (ex: for-each em Java). 
+Pode-se implementar Iterable e Iterator em Java para usar em for. 
+Exemplo de for-each em Java:
+Java
+
+for (Elemento e : colecao) {
+  // código
+}
+Desvio Incondicional
+Transfere o controle para um ponto específico ( goto ). 
+Muito debatido, Dijkstra criticou. 
+Prejudicial à legibilidade. 
+C# tem goto (em switch ), Java/Python/Ruby não. 
+Comandos Guardados
+Sugerido por Dijkstra para corretude e não determinismo. 
+Condições são "guardas". 
+Implementado em Ada para concorrência. 
+Há construções de seleção e laço com comandos guardados. 
