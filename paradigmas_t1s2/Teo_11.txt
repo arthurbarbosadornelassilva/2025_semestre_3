@@ -1,0 +1,41 @@
+PARADIGMA DECLARATIVO LÓGICO & CONCORRÊNCIA
+
+Paradigma Declarativo
+
+O paradigma declarativo permite que o programador se preocupe em descrever o problema a ser solucionado, ao invés de como o computador deve proceder para resolvê-lo. 
+
+Linguagens como Prolog permitem a programação declarativa, onde o foco está em declarar o conhecimento sobre o problema, e o sistema se encarrega de encontrar a solução. 
+
+Em Prolog, a descrição dos fatos é feita por meio de cláusulas, que podem ser fatos ou regras. 
+
+Existem outras linguagens representativas do paradigma declarativo, como Gödel, Picat, CHIP V5, entre outras. 
+
+Programação Lógica
+
+Prolog é o sistema de programação em lógica mais popular. 
+
+A programação em lógica oferece um arcabouço que permite inferir conclusões a partir de premissas, representando o conhecimento disponível de forma computacionalmente viável. 
+
+Um sistema de programação em lógica é composto por uma interface, um motor de inferência e uma base de conhecimento. 
+
+O motor de inferência atualiza a base de conhecimento e faz inferências para extrair informações implícitas. 
+
+Programação Concorrente
+
+A programação concorrente permite que mais de uma operação seja executada ao mesmo tempo. 
+
+Concorrência é a habilidade de diferentes partes de um programa serem executadas fora de ordem ou em ordem parcial, sem afetar o resultado final. 
+
+Um programa concorrente executa múltiplas tarefas independentes em um intervalo de tempo. 
+
+A concorrência pode ser determinística (execuções distintas com o mesmo comportamento) ou não-determinística (execuções podem ter comportamentos diferentes). 
+
+Concorrência e Paralelismo
+
+Concorrência é a execução intercalada de tarefas em um mesmo intervalo de tempo, focando em como as tarefas são estruturadas. 
+
+Paralelismo é a execução simultânea de tarefas, focando em como as tarefas são executadas. 
+
+A concorrência pode ser física (múltiplos processadores) ou lógica (compartilhamento de tempo de um processador). 
+
+A concorrência na execução de software pode ocorrer em diferentes níveis, como instrução, sentença, unidade e programa

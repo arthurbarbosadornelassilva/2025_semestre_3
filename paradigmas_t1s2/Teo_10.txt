@@ -27,7 +27,7 @@ Sobre Programação Funcional (CAI NA PROVA!!)
         3 -)    f(g(x)) = 2x² + 10x - 5
 
 ➢ Sobre Funções Puras e Impuras:
-    - Função Pura (ou determinística): sempre que for passada a mesma entrada, sairá o mesmo resultado. Não provocam mutação de estado ou efeitos colaterais, ou seja, apresentam referência referencial
+    - Função Pura (ou determinística): sempre que for passada a mesma entrada, sairá o mesmo resultado. Não provocam mutação de estado ou efeitos colaterais, ou seja, apresentam transparência referencial
 
     - Função Impura: pode retornar diferentes valores para a mesma entrada.
     Toda função que apresenta uma dependência externa (função importada, variável global que pode ter o valor alterado, etc) será impura.

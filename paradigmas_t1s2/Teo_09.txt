@@ -33,3 +33,44 @@ Abstração:
 - Operação mental de abstração depende não tanto do fenômeno
 observado, mas do interesse do observador
 - Auxilia no entendimento de problemas ou sistemas complexos, destacando aspectos do objeto real e analizando as partes importantes separadamente
+
+
+EXERCÍCIOS
+
+PLT - TEORIA - LISTA 9
+
+3) Quais são os tipos de abstrações em linguagens de programação?
+
+- Alguns tipos comuns de abstrações incluem:
+- Abstração de Procedimento (ou Funcional): Agrupa uma sequência de comandos em uma unidade (função, procedimento, método) com um nome. Isso permite reutilizar o código e pensar em termos de "o que" a função faz, sem se preocupar com "como" ela faz internamente.
+- Abstração de Dados: Define tipos de dados abstratos (TDAs) que encapsulam dados e as operações permitidas sobre esses dados. Classes em linguagens orientadas a objetos são um exemplo primário, onde os atributos (dados) e métodos (operações) são combinados.
+- Abstração de Controle: Controla o fluxo de execução de um programa sem expor os detalhes exatos de como esse controle é gerenciado. Exemplos incluem estruturas de repetição (loops for, while) e estruturas condicionais (if, else).
+- Abstração de Tipos: Permite trabalhar com variáveis sem especificar o tipo de dados exato em todos os momentos. Polimorfismo e interfaces são exemplos em linguagens orientadas a objetos.
+
+4) Qual é o propósito de um construtor em C++?
+
+O propósito principal de um construtor em C++ é inicializar os objetos de uma classe quando eles são criados
+
+5) Como as instâncias de classe em C++ são criadas?
+
+As instâncias de classe em C++ (objetos) podem ser criadas de duas maneiras principais:
+- Alocação Estática (na pilha - stack): O objeto é criado automaticamente quando sua declaração é encontrada e destruído automaticamente quando sai do escopo. A sintaxe é simplesmente declarar uma variável do tipo da classe
+- Alocação Dinâmica (no heap): O objeto é criado explicitamente usando o operador new, que aloca memória no heap. A responsabilidade de liberar essa memória recai sobre o programador, usando o operador delete
+
+6) Por que destrutores não são necessários com tanta frequência em Java como acontece em C++?
+
+A principal razão pela qual destrutores não são tão frequentemente necessários em Java quanto em C++ é o gerenciamento automático de memória (coleta de lixo - garbage collection) em Java
+
+7) O que é uma função amiga? O que é uma classe amiga?
+
+Em C++, funções e classes amigas são mecanismos que permitem que uma função externa ou outra classe acessem os membros private e protected de uma classe. Normalmente, esses membros só são acessíveis dentro da própria classe ou por suas classes derivadas (no caso de protected).
+- Função Amiga (friend function): Uma função que não é membro de uma classe, mas tem permissão para acessar os membros private e protected dessa classe. Uma função se torna amiga de uma classe sendo declarada como tal dentro da definição da classe, usando a palavra-chave 'friend'. Funções amigas são úteis para operações que logicamente estão relacionadas a uma classe, mas não precisam ser métodos da classe.
+- Classe Amiga (friend class): Uma classe que tem permissão para acessar os membros private e protected de outra classe. Se a Classe B é amiga da Classe A, todos os métodos da Classe B podem acessar os membros private e protected da Classe A. A Classe B se torna amiga da Classe A sendo declarada como tal dentro da definição da Classe A, usando a palavra-chave friend. Classes amigas são úteis quando diferentes classes precisam colaborar estreitamente e compartilhar detalhes de implementação.
+
+8) Cite uma razão pela qual Java não tem funções amigas ou classes amigas.
+
+Uma das principais razões pelas quais Java não implementa o conceito de funções amigas ou classes amigas está relacionada aos princípios de design e filosofia da linguagem, que enfatizam a encapsulamento forte e a simplicidade
+
+9) Como é feito o tratamento de exceção em linguagem C?
+
+A linguagem C, em sua forma padrão, não possui um mecanismo de tratamento de exceções embutido como o try-catch encontrado em linguagens como C++ ou Java

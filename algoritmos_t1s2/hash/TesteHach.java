@@ -9,5 +9,12 @@ public class TesteHach {
         mapa.put("44444", "ddddd");
         mapa.put("11111", "vvvvv");
         mapa.imprime();
+
+        String retorno = mapa.get("6789");
+        if (retorno != null) {
+            System.out.println(retorno + " e o valor associado à sua chave");
+        } else {
+            System.out.println("Chave não encontrada!");
+        }
     }
 }
