@@ -17,26 +17,27 @@ app.use(cors());
 const client = getXataClient();
 const JWT_SECRET = process.env.JWT_SECRET!;
 
-// app.get('/get_all_data', async (req: Request, res: Response): Promise<void> => {
-//     const result = await client.db.users.getAll();
-//     res.json({ results: result });
-// });
+app.get('/get_all_data', async (req: Request, res: Response): Promise<void> => {
+    const result = await client.db.users.getAll();
+    res.json({ results: result });
+});
 
-// app.post('/create_data', async (req: Request, res: Response): Promise<void> => {
-//     const newUser: Omit<UsersRecord, 'xata_id' | 'senha'> = req.body; // Recebe todos os dados, exceto id e senha (trataremos a senha separadamente)
-//     const senha = req.body.senha; // Extrai a senha do corpo da requisição
+app.post('/create_data', async (req: Request, res: Response): Promise<void> => {
+    const newUser: Omit<UsersRecord, 'xata_id' | 'senha'> = req.body; // Recebe todos os dados, exceto id e senha (trataremos a senha separadamente)
+    const senha = req.body.senha; // Extrai a senha do corpo da requisição
 
-//     // 1. Criptografar a senha usando bcrypt
-//     const saltRounds = 5; // Número de rounds para o hash (mais alto = mais seguro, mais lento)
-//     const hashedPassword = await bcrypt.hash(senha, saltRounds);
+    // 1. Criptografar a senha usando bcrypt
+    const saltRounds = 5; // Número de rounds para o hash (mais alto = mais seguro, mais lento)
+    const hashedPassword = await bcrypt.hash(senha, saltRounds);
 
-//     // 2. Criar o novo usuário com a senha criptografada
-//     const createUser = await client.db.users.create({ ...newUser, senha: hashedPassword });
-//     res.json({results: createUser})
-// })
+    // 2. Criar o novo usuário com a senha criptografada
+    const createUser = await client.db.users.create({ ...newUser, senha: hashedPassword });
+    res.json({results: createUser})
+})
 
 app.post('/login_usuario', async (req: Request, res: Response) => {
     const { email, senha} = req.body;   // Faz a requisição dos valores de email e senha inseridos em body
+    // console.log(email, senha);
 
     if (!email || !senha) {
         res.status(400).json({ error: 'Por favor, forneça email e senha.' });
