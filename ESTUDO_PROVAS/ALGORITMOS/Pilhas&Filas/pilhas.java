@@ -76,6 +76,7 @@ public class pilhas {
             int elementoRemovido = elementos[--topo];
             return elementoRemovido;
         }
+        // Soma de vetores
         public static int[] somarVetores(int[] vetor1, int[] vetor2) {
             if (vetor1.length != vetor2.length) {
                 throw new IllegalArgumentException("Os vetores devem ter o mesmo comprimento para serem somados.");
@@ -87,11 +88,25 @@ public class pilhas {
             }
             return vetorSoma;
         }
+        // Ordenação
+
 
         // Método NOVO
         public void metOrdDec(int[] pilha1, int[] pilha2) {
             int[] soma = somarVetores(pilha1, pilha2);
             int[] ordena = null;
+        }
+
+        @Override
+        public String toString() {
+            String s = "-----------\n";
+            if (isEmpty()) 
+                s += "esta vazia\n";
+            else 
+                for (int i = topo - 1; i >= 0; i--) {
+                    s += elementos[i] + "\n";
+                }
+            return s + "-----------\n";
         }
     }
 
@@ -102,10 +117,7 @@ public class pilhas {
 
         pilha1.push(10);
         pilha1.push(5);
-        pilha1.push(20);
-        pilha2.push(1);
-        pilha2.push(30);
-        pilha2.push(15);
+
 
     }
     
