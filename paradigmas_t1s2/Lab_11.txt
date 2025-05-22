@@ -1,0 +1,22 @@
+Características do Haskell
+
+Linguagem puramente funcional
+◉ Fortemente tipada, com inferência de tipos
+◉ Suporta listas nativamente
+◉ Implementação: compilador - interpretador
+◉ é uma linguagem de programação funcional, de propósito geral e de computação retardada(Lazy evaluation).
+◉ Computação retardada – os programas em haskell são executados usando uma técnica chamada avaliação preguiçosa , que se baseia na ideia de que nenhum
+calculo deve ser realizado até que o seu resultado seja realmente necessário
+
+Um programa funcional é uma chamada de função que normalmente chama outras
+funções para gerar um valor de retorno. As principais operações nesse tipo de
+programação são a composição de funções e a chamada recursiva de funções 
+(o que torna o processamento pesado)
+
+Todos os tipos são conhecidos em tempo de compilação.
+● Existe inferências de tipos. Não é preciso explicitar de qual
+tipo é um certo identificador.
+● Haskell permite que um mesmo identificador seja declarado
+em diferentes partes do programa, possivelmente
+representando diferentes entidades.
+● As conversões de dados são explicitas.

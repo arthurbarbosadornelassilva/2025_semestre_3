@@ -67,7 +67,7 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json', // Define o tipo de conteúdo padrão para JSON
   },
-  timeout: 10000, // Define um tempo limite para as requisições
+  // timeout: 10000, // Define um tempo limite para as requisições
 });
 
 // Interceptor para tratar erros de resposta de forma centralizada.

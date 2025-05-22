@@ -11,8 +11,28 @@ const PORT = 3000;
 dotenv.config();
 const app = express();
 
-app.use(express.json({ limit:"50mb" }));
-app.use(cors());
+app.use(express.json());
+app.use(cors({
+    origin: [
+        "http://localhost:8081",
+        "http://127.0.0.1:8081",
+        "http://localhost:3000",
+        "http://127.0.0.1:3000"
+    ],
+    methods: [
+        "GET",
+        "POST"
+    ],
+    allowedHeaders: [
+        "Content-Type",
+        "Authorization",
+        "Origin",
+        "X-Requested-With",
+        "Accept"
+    ],
+    exposedHeaders: ["Authorization"],
+    credentials: true
+}));
 
 const client = getXataClient();
 const JWT_SECRET = process.env.JWT_SECRET!;
