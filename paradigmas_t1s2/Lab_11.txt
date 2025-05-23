@@ -21,3 +21,5 @@ em diferentes partes do programa, possivelmente
 representando diferentes entidades.
 ● As conversões de dados são explicitas.
 
+EXERCÍCIOS:
+

@@ -54,3 +54,18 @@ Sobre Programação Funcional (CAI NA PROVA!!)
     - Haskell
     - Scala
     - Lua
+
+EXERCÍCIOS
+
+PLP - TEORIA - LISTA 10
+
+1 -)
+Elementos importantes sobre Programação Funcional:
+- Sobre o Cálculo Lambda: especifica os parâmetros e a definição de uma função 'n', sem se importar com células de memória ou operadores de atribuição (isso, no caso de linguagens funcionais puras)   ->  Lambda = cálculo puro
+- Montagem de uma Expressão Lambda
+- Scheme: derivada da linguagem Lisp
+- Haskell: linguagem funcional mais recente
+
+2 -)
+Avaliação Ráida: é uma abordagem estratégica para coletar e analisar informações de forma ágil e eficiente, especialmente em contextos onde o tempo, os recursos e a disponibilidade de dados são limitados;
+Avaliação Lenta (Lazy Evaluation): se baseia na ideia de que nenhum calculo deve ser realizado até que o seu resultado seja realmente necessário

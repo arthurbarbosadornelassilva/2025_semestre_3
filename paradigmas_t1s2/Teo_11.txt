@@ -39,3 +39,29 @@ Paralelismo é a execução simultânea de tarefas, focando em como as tarefas s
 A concorrência pode ser física (múltiplos processadores) ou lógica (compartilhamento de tempo de um processador). 
 
 A concorrência na execução de software pode ocorrer em diferentes níveis, como instrução, sentença, unidade e programa
+
+EXERCÍCIOS
+
+PLP - TEORIA - LISTA 11
+
+1 -)
+Elementos Importantes sobre Programação Lógica:
+- Sobre Porgramação Lógica: programação a partir de premissas
+- Cláusulas de Horn
+- Prolog
+- Paralelismo & Concorrência
+
+2 -)
+Elementos importantes sobre Concorrência:
+- Arquiteturas multiprocessadas
+- Concorrência Física e Lógica
+- Sobre threads
+- Concorr~encia em Nível de Subprograma
+
+3 -)
+Vantagens da Programação Concorrente:
+- Processamento permite o processamento de mais de uma operação por vez;
+- Utiliza apenas uma núcleo da CPU para o processamento dessas operações, garantindo uma melhor utilização do hardware;
+- Cria um código mais simples, com threads separadas para cada tarefa, tornando o código mais limpo, fácil de entender e manter, sem gerar múltiplas operações sequenciais.
+
+As threads são fluxos de execução independentes dentro de um único processo.

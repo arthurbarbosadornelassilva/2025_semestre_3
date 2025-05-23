@@ -1,0 +1,55 @@
+** ATIVIDADE 03 -Teoria **
+
+EXERCÍCIOS DA LISTA 9
+
+1 -)
+Elementos importantes sobre Tratamento de Exceções:
+- Sobre Tratamento de Exceções: erros detectados por hardware, tanto erros de leitura de discos e condi-ções não usuais quanto término de arquivos
+- Tratando dados em C++ (e o conceito da liberação de lixo)
+- Tratamento de Exceções em Java
+- Sobre Tratamento de Eventos: os eventos são criados por ações externas, como interações de usuário realizadas por meio de uma interface gráfica de usuário (GUI), e são tratados
+
+2 -)
+Elementos importantes sobre Dados Abstratos e Encapsulamento:
+- Sobre Abstração: isolar e compreender um conceito dentro de um 'todo'
+- Abstraindo Dados: definição do conceito de 'objeto' e ocultamento de informações para o usuário
+- Encapsulamento: criação classes e seus objetos, herança e polimorfismo
+- Nomeação de Encapsulamento: definem escopos de nome que ajudam a evitar
+conflitos
+
+EXERCÍCIOS DA LISTA 10
+
+1 -)
+Elementos importantes sobre Programação Funcional:
+- Sobre o Cálculo Lambda: especifica os parâmetros e a definição de uma função 'n', sem se importar com células de memória ou operadores de atribuição (isso, no caso de linguagens funcionais puras)   ->  Lambda = cálculo puro
+- Montagem de uma Expressão Lambda
+- Scheme: derivada da linguagem Lisp
+- Haskell: linguagem funcional mais recente
+
+2 -)
+Avaliação Ráida: é uma abordagem estratégica para coletar e analisar informações de forma ágil e eficiente, especialmente em contextos onde o tempo, os recursos e a disponibilidade de dados são limitados;
+Avaliação Lenta (Lazy Evaluation): se baseia na ideia de que nenhum calculo deve ser realizado até que o seu resultado seja realmente necessário
+
+EXERCÍCIOS DA LISTA 11
+
+1 -)
+Elementos Importantes sobre Programação Lógica:
+- Sobre Porgramação Lógica: programação a partir de premissas
+- Cláusulas de Horn
+- Prolog
+- Paralelismo & Concorrência
+
+2 -)
+Elementos importantes sobre Concorrência:
+- Arquiteturas multiprocessadas
+- Concorrência Física e Lógica
+- Sobre threads
+- Concorr~encia em Nível de Subprograma
+
+3 -)
+Vantagens da Programação Concorrente:
+- Processamento permite o processamento de mais de uma operação por vez;
+- Utiliza apenas uma núcleo da CPU para o processamento dessas operações, garantindo uma melhor utilização do hardware;
+- Cria um código mais simples, com threads separadas para cada tarefa, tornando o código mais limpo, fácil de entender e manter, sem gerar múltiplas operações sequenciais.
+
+As threads são fluxos de execução independentes dentro de um único processo.

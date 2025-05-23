@@ -37,7 +37,23 @@ observado, mas do interesse do observador
 
 EXERCÍCIOS
 
-PLT - TEORIA - LISTA 9
+PLP - TEORIA - LISTA 9
+
+1 -)
+Elementos importantes sobre Tratamento de Exceções:
+- Sobre Tratamento de Exceções: erros detectados por hardware, tanto erros de leitura de discos e condi-ções não usuais quanto término de arquivos
+- Tratando dados em C++ (e o conceito da liberação de lixo)
+- Tratamento de Exceções em Java
+- Sobre Tratamento de Eventos: os eventos são criados por ações externas, como interações de usuário realizadas por meio de uma interface gráfica de usuário (GUI), e são tratados
+
+
+2 -)
+Elementos importantes sobre Dados Abstratos e Encapsulamento:
+- Sobre Abstração: isolar e compreender um conceito dentro de um 'todo'
+- Abstraindo Dados: definição do conceito de 'objeto' e ocultamento de informações para o usuário
+- Encapsulamento: criação classes e seus objetos, herança e polimorfismo
+- Nomeação de Encapsulamento: definem escopos de nome que ajudam a evitar
+conflitos
 
 3) Quais são os tipos de abstrações em linguagens de programação?
 
