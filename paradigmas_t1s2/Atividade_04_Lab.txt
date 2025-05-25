@@ -1,6 +1,42 @@
-EXERCÍCIOS:
+** ATIVIDADE 04 - Lab **
 
-1 -)
+EXERCÍCIOS DA LISTA 9
+
+- 1)
+# Raio: 6cm/ constante PI: 3
+# funcao area(raio): PI * (raio ** 2)
+# funcao volume(raio): (4/3) * (PI * raio ** 3)
+
+object FuncoesEsfera{
+    val pi: Int = 3
+
+    def area(r: Int): Int = {
+        pi * (r * r)
+    }
+    def volume(r: Double): Double = {
+        (4.0/3.0) * pi * (r * r * r)
+    }
+}
+
+val testeArea = FuncoesEsfera.area(6)
+println(testeArea + "cm²")
+val testeVolume = FuncoesEsfera.volume(6)
+println(testeVolume + "cm³")
+
+- 2)
+# celcius: 30
+# funcao fahrenheit(celcius): (celcius * 9.0/5.0) + 32
+
+val celcius: Double = 30.0
+val fahrenheit: (Double) => Double = (tempCelcius) => (tempCelcius * 9.0/5.0) + 32
+
+val testeFahrenheit = fahrenheit(celcius)
+println(testeFahrenheit)
+
+
+EXERCÍCIOS DA LISTA 10:
+
+- 1)
 object SilhuetaEdificios {
 
   type Edificio = (Int, Int, Int)
@@ -209,8 +245,7 @@ object SilhuetaEdificios {
   }
 }
 
-2 -)
-
+- 2)
 Capítulo 1 - Introdução
 - Os benefícios do uso de GPUs e Paralelismo (processos paralelos)
 - Sobre o Cuda: plataforma de computação paralela de propósito geral
@@ -222,3 +257,39 @@ Capítulo 2 - Modelo de Programação
 - Hierarquia de Memória
 - Programação Heterogênea
 - Capacidade Computacional
+
+EXERCÍCIOS DA LISTA 11:
+
+- 1)
+module FuncoesEsfera where
+
+import Data.Bifunctor (bimap)
+
+myPiInt :: Int
+myPiInt = 3
+
+area :: Int -> Int
+area r = myPiInt * (r * r)
+
+volume :: Double -> Double
+volume r = (4.0 / 3.0) * pi * (r * r * r)
+
+main :: IO ()
+main = do
+  let testeArea = area 6
+  putStrLn $ show testeArea ++ "cm²"
+
+  let testeVolume = volume 6.0
+  putStrLn $ show testeVolume ++ "cm³"
+
+- 2)
+celcius :: Double
+celcius = 30.0
+
+fahrenheit :: Double -> Double
+fahrenheit tempCelcius = (tempCelcius * 9.0 / 5.0) + 32.0
+
+main :: IO ()
+main = do
+  let testeFahrenheit = fahrenheit celcius
+  putStrLn $ show testeFahrenheit

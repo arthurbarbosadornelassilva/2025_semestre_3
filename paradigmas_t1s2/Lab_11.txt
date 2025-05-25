@@ -23,3 +23,36 @@ representando diferentes entidades.
 
 EXERCÍCIOS:
 
+1 -)
+module FuncoesEsfera where
+
+import Data.Bifunctor (bimap)
+
+myPiInt :: Int
+myPiInt = 3
+
+area :: Int -> Int
+area r = myPiInt * (r * r)
+
+volume :: Double -> Double
+volume r = (4.0 / 3.0) * pi * (r * r * r)
+
+main :: IO ()
+main = do
+  let testeArea = area 6
+  putStrLn $ show testeArea ++ "cm²"
+
+  let testeVolume = volume 6.0
+  putStrLn $ show testeVolume ++ "cm³"
+
+2 -)
+celcius :: Double
+celcius = 30.0
+
+fahrenheit :: Double -> Double
+fahrenheit tempCelcius = (tempCelcius * 9.0 / 5.0) + 32.0
+
+main :: IO ()
+main = do
+  let testeFahrenheit = fahrenheit celcius
+  putStrLn $ show testeFahrenheit

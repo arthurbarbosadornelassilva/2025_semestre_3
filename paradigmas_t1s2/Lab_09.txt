@@ -15,8 +15,35 @@ A combinação do paradigma orientado com funcional faz com que o Scala permita 
 EXERCÍCIOS:
 
 1 -)
+# Raio: 6cm/ constante PI: 3
+# funcao area(raio): PI * (raio ** 2)
+# funcao volume(raio): (4/3) * (PI * raio ** 3)
+
+object FuncoesEsfera{
+    val pi: Int = 3
+
+    def area(r: Int): Int = {
+        pi * (r * r)
+    }
+    def volume(r: Double): Double = {
+        (4.0/3.0) * pi * (r * r * r)
+    }
+}
+
+val testeArea = FuncoesEsfera.area(6)
+println(testeArea + "cm²")
+val testeVolume = FuncoesEsfera.volume(6)
+println(testeVolume + "cm³")
 
 2 -)
+# celcius: 30
+# funcao fahrenheit(celcius): (celcius * 9.0/5.0) + 32
+
+val celcius: Double = 30.0
+val fahrenheit: (Double) => Double = (tempCelcius) => (tempCelcius * 9.0/5.0) + 32
+
+val testeFahrenheit = fahrenheit(celcius)
+println(testeFahrenheit)
 
 3 -)
 
