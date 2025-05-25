@@ -65,4 +65,9 @@ class No {
     public String toString() {
         return "[" + info + "]";
     }
+
+    public No getDireita() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDireita'");
+    }
 }
