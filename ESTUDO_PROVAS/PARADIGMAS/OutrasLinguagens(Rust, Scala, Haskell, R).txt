@@ -1,0 +1,92 @@
+RUST:
+
+// 'Classe' em escala é definida por 'struct'
+struct Calc {
+
+}
+// Método 'Calc' da classe 'Calc'
+impl Calc {
+    pub fn soma(i: i32, j: i32) {
+        let resultado_soma = i + j;
+        println!("A soma é: {}", resultado_soma);
+    }
+    pub fn fatorial(n: i32) -> i32 {
+        if n < 0 {
+            println!("Erro!");
+        }
+        if n == 0 || n == 1 {
+            1
+        }
+        else {
+            n * Self::fatorial(n - 1)
+        }
+    }
+}
+
+fn main() {
+    // println!("{}", Calc::soma(1, 2));
+    Calc::soma(12, 18);
+    
+    let num_fatorial = 4;
+    let resultado_fatorial = Calc::fatorial(num_fatorial);
+    println!("O fatorial de {} é: {}", num_fatorial, resultado_fatorial);
+}
+
+--//--
+
+SCALA:
+
+object CalculadoraFatorial {
+  def calcularFatorial(numero: Int): Int = {
+    if (numero == 0)
+      1
+    else
+      return numero * calcularFatorial(numero - 1)
+  }
+  def main(args: Array[String]): Unit = {
+    val numero = 5 // Calculando o fatorial de 5
+    if (numero < 0) {
+      println("Não é possível calcular o fatorial de números negativos.")
+    } else {
+    val resultado = calcularFatorial(numero)
+    println(s"O fatorial de $numero é: $resultado")
+    }
+  }
+}
+
+*teste de variável tem o valor de uma função matemática atribuída*
+val multiplicador: (Int, Int) => Int = (x, y) => x * y
+println(multiplicador(5, 4))
+
+--//--
+
+HASKELL:
+
+fatorial :: Int -> Int
+
+-- Caso base: O fatorial de 0 é 1.
+fatorial 0 = 1
+
+-- Caso recursivo: Para qualquer outro número 'n', o fatorial é 'n' vezes o fatorial de 'n-1'.
+fatorial n = n * fatorial (n - 1)
+
+-- A função 'main' é o ponto de entrada do programa.
+main :: IO ()
+main = do
+    -- Calcula e imprime o fatorial de 5
+    let num1 = 5
+    let resultado1 = fatorial num1
+    putStrLn $ "O fatorial de " ++ show num1 ++ " é: " ++ show resultado1
+    -- Saída esperada: O fatorial de 5 é: 120
+
+    -- Calcula e imprime o fatorial de 0
+    let num2 = 0
+    let resultado2 = fatorial num2
+    putStrLn $ "O fatorial de " ++ show num2 ++ " é: " ++ show resultado2
+    -- Saída esperada: O fatorial de 0 é: 1
+
+--//--
+
+R:
+
+Semelhante ao python, mas com o uso de chaves {} nos blocos de código

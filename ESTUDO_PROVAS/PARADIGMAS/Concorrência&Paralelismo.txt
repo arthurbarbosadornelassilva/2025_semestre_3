@@ -1,0 +1,58 @@
+Concorrência e Paralelismo:
+
+
+Concorrência:
+tarefas sendo executadas de forma intercalada em um mesmo intervalo de tempo. É uma forma de lidar com muitas coisas ao mesmo tempo e está ligado
+a forma de se ESTRUTURAR tarefas
+
+Vantagens do Paradigma Concorrente:
+- Aumento de desempenho, pois aumenta-se a quantidade de tarefas sendo
+executadas em determinado período de tempo
+- Possibilidade de uma melhor modelagem de programas
+
+Categorias de Concorrência:
+	- Concorrência física: N processos -> N processadores
+	- Concorrência lógica: N processos -> 1 processador
+
+Níveis de Concorrência (para executar duas ou mais instruções simultâneas)
+	- Nível de sentença (sentenças de linguagem)
+	- Nível de instrução (instrução de máquina)
+	- Nível de unidade ( subprograma)
+	- Nível de programa (programa)
+
+Threads & Multithreads:
+	- Thread of Control:  é a sequência de pontos do programa atingidos a medida que o controle flui por ele -> é uma iteração do subprograma
+	- Multithread:   múltiplas linhas de controle (threads)	
+
+Concorrência de Subprogramas:
+
+	- Sincronização de tarefas
+	• Um mecanismo que controla a ordem que as tarefas são executadas
+	• Dois tipos de sincronização
+	• Sincronização de cooperação
+	• Sincronização de competição
+	• A comunicação é necessária para a sincronização
+
+	- Cooperação: tarefa A espera tarefa B terminar execução para continuar
+	- Competição: duas tarefas competem por um mesmo recurso (ex.: um contador compartilhado)
+
+Soluções para tarefas concorrentes:
+	- "Semáforos" (delegam se a tarefa pode ou não ser realizada e em qual momento)
+	- Monitores
+
+•Um dos objetivos do software concorrente é ser escalável.
+•Um software é escalável se a velocidade de execução aumenta
+quando mais processadores estão disponíveis
+
+--//--
+
+Paralelismo:
+Execução simultânea de um conjunto de tarefas, que podem ou não estar
+relacionadas. É uma forma de fazer muitas coisas ao mesmo tempo e está ligado a forma de se EXECUTAR tarefas, OU SEJA, trabalha a execução simultânea de partes distintas de um mesmo programa em múltiplos recursos de hardware (como processadores, núcleos de CPU ou até mesmo diferentes máquinas).
+
+Características principais da programação paralela:
+
+- Execução simultânea real: As tarefas são realmente executadas ao mesmo tempo em diferentes unidades de processamento (cores, CPUs, GPUs, etc.).
+- Divisão de problemas: Problemas grandes são divididos em problemas menores e independentes que podem ser resolvidos em paralelo.
+- Aproveitamento de hardware: Visa utilizar múltiplos núcleos de processadores ou até mesmo máquinas distribuídas para acelerar o processamento.
+- Comunicação e sincronização: Embora as tarefas sejam independentes em sua execução, muitas vezes elas precisam se comunicar e se sincronizar para compartilhar dados ou coordenar o trabalho

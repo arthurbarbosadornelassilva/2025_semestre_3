@@ -1,0 +1,79 @@
+REVISÃO DEV ÁGIL:
+
+--//--	
+
+- SCRUM: estrutura Scrum é propositalmente incompleta, apenas definindo as partes necessárias para implementar a teoria Scrum. O Scrum é construído pela inteligência coletiva das pessoas que o utilizam
+
+- Equipe Scrum (multifuncionais e autogerenciadas): devs, PO e Scrum Master
+
+- Eventos do Scrum: Sprints, Sprint Planning, Daily, Sprint Review(desempenho) e Sprint Retrospective(qualidade e boa interação). Durante o evento, o Time Scrum e os stakeholders revisam o que foi realizado na Sprint e o que mudou em seu ambiente.
+
+- Artefatos Scrum: Product Backlog, Sprint Backlog e Incrementos
+
+--//--
+
+- TESTE MANUAL: execução demorada, economicamente onerosa e provoca um
+gargalo no processo devido a baixa frequência de deploys. Testes e inspeções manuais não são confiáveis porque as pessoas têm baixo desempenho na execução de tarefas repetitivas.
+
+- TESTE ÁGIL: execução de testes durante todo o processo de desenvolvimento e não somente ao final, incentiva a prevenção de defeitos e não a detecção de defeitos.
+
+- Pipeline de Implementação: integra código e ambientes que disparam testes. Seu objetivo é garantir que todo o código inserido no controle de versão seja automaticamente construído e testado em um ambiente do tipo produção. Com isso, encontram-se erros assim que uma mudança é introduzida , permitindo corrigi-la imediatamente.
+
+- TDD: esenvolvimento dirigido por testes é uma técnica de programação onde o principal objetivo é escrever código funcional limpo a partir de um teste que tenha falhado. Como efeito colateral, obtém-se um código fonte bem testado. 'Testar antes e implementar o código depois'.
+
+- BDD:  propõe uma forma eficaz de resolver problemas de comunicação entre as equipes de negócio e a equipe técnica (desenvolvimento e testes), aumentando o compartilhamento de conhecimento entre elas, através de uma linguagem natural genérica que facilita o entendimento de todos
+
+	EXEMPLO:
+	Teste a ser executado:
+	Funcionalidade: <descrição da funcionalidade>
+	Como um <usuário/ator>
+	Eu quero <meta a ser alcançada>
+	De modo que <a razão para alcançar a meta>
+	Caso de teste:
+	Cenário: <descrição do teste>
+	Dado <um estado conhecido>
+	Quando <um determinado evento ocorre>
+	Então <isso deve ocorrer>
+
+	Teste a ser executado:
+	Funcionalidade: Consultar clientes
+	Como um funcionário
+	Eu quero consultar um cliente cadastrado com
+	sucesso por cpf
+	De modo que eu possa garantir que a consulta
+	está correta
+	Caso de teste:
+	Cenário: consultar cliente com sucesso por CPF
+	Dado: ao selecionar a opção buscar
+	Quando: digitado o CPF 111.111.111-11
+	Então: deve listar nome, cpf e data de
+	nascimento do cliente.
+	BDD - Behavior Driven Development
+	
+--//--
+
+DevOps descreve abordagens para acelerar os processos pelos quais uma ideia (novo recurso de software, uma melhoria ou uma correção de bug) passa do desenvolvimento à implantação em um ambiente de produção onde pode agregar valor ao usuário
+
+CI/CD é um conjunto de práticas essenciais no DevOps que visa
+automatizar e acelerar o desenvolvimento, testes e entrega de software.
+
+- CI: o objetivo é ter vários desenvolvedores trabalhando simultaneamente em diferentes recursos do mesmo aplicativo. CI ajuda os desenvolvedores a validar alterações criando automaticamente o aplicativoe executando diferentes níveis de testes automatizados, geralmente testes de unidade e integração.
+
+- CD (Delivery): após a automação de compilações e testes de unidade e integração em CI, a entrega contínua automatiza a liberação
+desse código validado para um repositório.
+
+- CD (Deployment): Implantação Contínua, muitas vezes confundida com a Entrega Contínua, mas possui mais passos automatizados para a implantação em produção, que é automática. Na prática, CD significa que a mudança de um desenvolvedor para um aplicativo em nuvem pode entrar em vigor minutos (supondo que ele passe nos testes automatizados). Isso torna muito mais fácil receber e incorporar continuamente o feedback do usuário.
+
+Juntas, todas essas práticas de
+CI/CD conectadas tornam a
+entrega mais fácil, liberar
+alterações em aplicativos em
+pequenas partes, em vez de
+tudo de uma vez
+
+No entanto, também há muito
+investimento inicial, pois os
+testes automatizados precisarão
+ser escritos para acomodar uma
+variedade de estágios de teste e
+lançamento no pipeline de CI/CD
