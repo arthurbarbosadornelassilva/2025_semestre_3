@@ -57,10 +57,9 @@ DevOps descreve abordagens para acelerar os processos pelos quais uma ideia (nov
 CI/CD é um conjunto de práticas essenciais no DevOps que visa
 automatizar e acelerar o desenvolvimento, testes e entrega de software.
 
-- CI: o objetivo é ter vários desenvolvedores trabalhando simultaneamente em diferentes recursos do mesmo aplicativo. CI ajuda os desenvolvedores a validar alterações criando automaticamente o aplicativoe executando diferentes níveis de testes automatizados, geralmente testes de unidade e integração.
+- CI: o objetivo é ter vários desenvolvedores trabalhando simultaneamente em diferentes recursos do mesmo aplicativo. CI ajuda os desenvolvedores a validar alterações criando automaticamente o aplicativo e executando diferentes níveis de testes automatizados, geralmente testes de unidade e integração.
 
-- CD (Delivery): após a automação de compilações e testes de unidade e integração em CI, a entrega contínua automatiza a liberação
-desse código validado para um repositório.
+- CD (Delivery): após a automação de compilações e testes de unidade e integração em CI, a entrega contínua automatiza a liberação desse código validado para um repositório.
 
 - CD (Deployment): Implantação Contínua, muitas vezes confundida com a Entrega Contínua, mas possui mais passos automatizados para a implantação em produção, que é automática. Na prática, CD significa que a mudança de um desenvolvedor para um aplicativo em nuvem pode entrar em vigor minutos (supondo que ele passe nos testes automatizados). Isso torna muito mais fácil receber e incorporar continuamente o feedback do usuário.
 
